@@ -153,7 +153,7 @@
             gradientLabel1.BackgroundColorTop = Color.Blue;
             gradientLabel1.BackgroundGradientAngel = 0F;
             gradientLabel1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel1.Location = new Point(179, 691);
+            gradientLabel1.Location = new Point(163, 691);
             gradientLabel1.Name = "gradientLabel1";
             gradientLabel1.Size = new Size(150, 50);
             gradientLabel1.TabIndex = 7;

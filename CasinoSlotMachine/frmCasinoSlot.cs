@@ -29,13 +29,13 @@ namespace CasinoSlotMachine
 
         static int scrollTime1 = 0;
         static int scrollTime2 = 0;
-        static int scorllTime3 = 0;
+        static int scrollTime3 = 0;
 
         void movePictureBox(int speed)
         {
-           
             if (pctb1.Top > panel1.Height)
             {
+                
                 pctb1.Top = -panel1.Height;
             }
             else
@@ -44,18 +44,21 @@ namespace CasinoSlotMachine
             }
             if (pctb2.Top > panel1.Height)
             {
-                pctb2.Top = (-panel1.Height * 2) + pctb2.Top;
+                scrollTime1++;
+                pctb2.Top = -panel1.Height;
             }
             else
             {
                 pctb2.Top += speed;
             }
+            
         }
 
         void movePictureBox1(int speed)
         {
             if (pctb3.Top > panel2.Height)
             {
+                
                 pctb3.Top = -panel2.Height;
             }
             else
@@ -64,18 +67,21 @@ namespace CasinoSlotMachine
             }
             if (pctb4.Top > panel2.Height)
             {
-                pctb4.Top = (-panel2.Height * 2) + pctb4.Top;
+                scrollTime2++;
+                pctb4.Top = -panel2.Height;
             }
             else
             {
                 pctb4.Top += speed;
             }
+            
         }
 
         void movePictureBox2(int speed)
         {
             if (pctb5.Top > panel3.Height)
             {
+                
                 pctb5.Top = -panel3.Height;
             }
             else
@@ -84,18 +90,24 @@ namespace CasinoSlotMachine
             }
             if (pctb6.Top > panel1.Height)
             {
-                pctb6.Top = (-panel3.Height * 2) + pctb6.Top;
+                scrollTime3++;
+                pctb6.Top = -panel3.Height;
             }
             else
             {
                 pctb6.Top += speed;
             }
+            
         }
 
         private async void timer1_Tick(object sender, EventArgs e)
         {
-            movePictureBox(10);
-            await Task.Delay(300);
+            if (scrollTime1 > 10)
+            {
+                return;
+            }
+            movePictureBox(15);
+            await Task.Delay(500);
             timer2.Start();
         }
 
@@ -107,14 +119,22 @@ namespace CasinoSlotMachine
 
         private async void timer2_Tick(object sender, EventArgs e)
         {
-            movePictureBox1(10);
+            if (scrollTime2 > 10)
+            {
+                return;
+            }
+            movePictureBox1(15);
             await Task.Delay(500);
             timer3.Start();
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            movePictureBox2(10);
+            if (scrollTime3 > 10)
+            {
+                return;
+            }
+            movePictureBox2(15);
         }
     }
 }

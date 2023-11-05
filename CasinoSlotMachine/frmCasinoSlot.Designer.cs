@@ -40,15 +40,29 @@
             gradientLabel2 = new GradientLabel();
             gradientLabel3 = new GradientLabel();
             gradientLabel4 = new GradientLabel();
-            pictureBox3 = new PictureBox();
+            pctb2 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            pctb1 = new PictureBox();
             button4 = new Button();
+            panel2 = new Panel();
+            pctb3 = new PictureBox();
+            pctb4 = new PictureBox();
+            panel3 = new Panel();
+            pctb5 = new PictureBox();
+            pctb6 = new PictureBox();
+            timer2 = new System.Windows.Forms.Timer(components);
+            timer3 = new System.Windows.Forms.Timer(components);
             gradientPanelSoTienThuong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctb2).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctb1).BeginInit();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctb3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctb4).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pctb5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pctb6).BeginInit();
             SuspendLayout();
             // 
             // gradientLabelSoTienThuong
@@ -160,8 +174,8 @@
             gradientLabel2.Size = new Size(231, 50);
             gradientLabel2.TabIndex = 8;
             gradientLabel2.Text = "000.000.000";
-            gradientLabel2.TextColorBottom = Color.Black;
-            gradientLabel2.TextColorTop = Color.Black;
+            gradientLabel2.TextColorBottom = Color.White;
+            gradientLabel2.TextColorTop = Color.White;
             gradientLabel2.TextGradientAngel = 0F;
             // 
             // gradientLabel3
@@ -193,20 +207,20 @@
             gradientLabel4.Size = new Size(231, 50);
             gradientLabel4.TabIndex = 10;
             gradientLabel4.Text = "000.000.000";
-            gradientLabel4.TextColorBottom = Color.Black;
-            gradientLabel4.TextColorTop = Color.Black;
+            gradientLabel4.TextColorBottom = Color.White;
+            gradientLabel4.TextColorTop = Color.White;
             gradientLabel4.TextGradientAngel = 0F;
             // 
-            // pictureBox3
+            // pctb2
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.BackgroundImage = Properties.Resources._2;
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(0, 258);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(291, 219);
-            pictureBox3.TabIndex = 13;
-            pictureBox3.TabStop = false;
+            pctb2.BackColor = Color.Transparent;
+            pctb2.BackgroundImage = Properties.Resources._2;
+            pctb2.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb2.Location = new Point(0, 258);
+            pctb2.Name = "pctb2";
+            pctb2.Size = new Size(291, 219);
+            pctb2.TabIndex = 13;
+            pctb2.TabStop = false;
             // 
             // timer1
             // 
@@ -216,27 +230,27 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(pctb1);
+            panel1.Controls.Add(pctb2);
             panel1.Location = new Point(5, 157);
             panel1.Name = "panel1";
             panel1.Size = new Size(291, 477);
             panel1.TabIndex = 14;
             // 
-            // pictureBox1
+            // pctb1
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImage = Properties.Resources._1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(291, 219);
-            pictureBox1.TabIndex = 14;
-            pictureBox1.TabStop = false;
+            pctb1.BackColor = Color.Transparent;
+            pctb1.BackgroundImage = Properties.Resources._1;
+            pctb1.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb1.Location = new Point(0, 0);
+            pctb1.Name = "pctb1";
+            pctb1.Size = new Size(291, 219);
+            pctb1.TabIndex = 14;
+            pctb1.TabStop = false;
             // 
             // button4
             // 
-            button4.Location = new Point(404, 270);
+            button4.Location = new Point(728, 659);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 15;
@@ -244,11 +258,88 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(pctb3);
+            panel2.Controls.Add(pctb4);
+            panel2.Location = new Point(319, 157);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(291, 477);
+            panel2.TabIndex = 16;
+            // 
+            // pctb3
+            // 
+            pctb3.BackColor = Color.Transparent;
+            pctb3.BackgroundImage = Properties.Resources._1;
+            pctb3.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb3.Location = new Point(0, 0);
+            pctb3.Name = "pctb3";
+            pctb3.Size = new Size(291, 219);
+            pctb3.TabIndex = 14;
+            pctb3.TabStop = false;
+            // 
+            // pctb4
+            // 
+            pctb4.BackColor = Color.Transparent;
+            pctb4.BackgroundImage = Properties.Resources._2;
+            pctb4.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb4.Location = new Point(0, 258);
+            pctb4.Name = "pctb4";
+            pctb4.Size = new Size(291, 219);
+            pctb4.TabIndex = 13;
+            pctb4.TabStop = false;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(pctb5);
+            panel3.Controls.Add(pctb6);
+            panel3.Location = new Point(626, 156);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(291, 477);
+            panel3.TabIndex = 17;
+            // 
+            // pctb5
+            // 
+            pctb5.BackColor = Color.Transparent;
+            pctb5.BackgroundImage = Properties.Resources._1;
+            pctb5.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb5.Location = new Point(0, 0);
+            pctb5.Name = "pctb5";
+            pctb5.Size = new Size(291, 219);
+            pctb5.TabIndex = 14;
+            pctb5.TabStop = false;
+            // 
+            // pctb6
+            // 
+            pctb6.BackColor = Color.Transparent;
+            pctb6.BackgroundImage = Properties.Resources._2;
+            pctb6.BackgroundImageLayout = ImageLayout.Stretch;
+            pctb6.Location = new Point(0, 258);
+            pctb6.Name = "pctb6";
+            pctb6.Size = new Size(291, 219);
+            pctb6.TabIndex = 13;
+            pctb6.TabStop = false;
+            // 
+            // timer2
+            // 
+            timer2.Interval = 1;
+            timer2.Tick += timer2_Tick;
+            // 
+            // timer3
+            // 
+            timer3.Interval = 1;
+            timer3.Tick += timer3_Tick;
+            // 
             // frmCasinoSlot
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(914, 759);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(gradientLabel4);
@@ -267,9 +358,15 @@
             Load += frmCasinoSlot_Load;
             gradientPanelSoTienThuong.ResumeLayout(false);
             gradientPanelSoTienThuong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctb2).EndInit();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctb1).EndInit();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pctb3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctb4).EndInit();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pctb5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pctb6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,10 +384,18 @@
         private GradientLabel gradientLabel2;
         private GradientLabel gradientLabel3;
         private GradientLabel gradientLabel4;
-        private PictureBox pictureBox3;
+        private PictureBox pctb2;
         private System.Windows.Forms.Timer timer1;
         private Panel panel1;
         private Button button4;
-        private PictureBox pictureBox1;
+        private PictureBox pctb1;
+        private Panel panel2;
+        private PictureBox pctb3;
+        private PictureBox pctb4;
+        private Panel panel3;
+        private PictureBox pctb5;
+        private PictureBox pctb6;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

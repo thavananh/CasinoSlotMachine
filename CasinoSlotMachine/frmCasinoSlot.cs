@@ -27,34 +27,94 @@ namespace CasinoSlotMachine
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            movePictureBox(6);
-        }
+        static int scrollTime1 = 0;
+        static int scrollTime2 = 0;
+        static int scorllTime3 = 0;
+
         void movePictureBox(int speed)
         {
-
-            if (pictureBox1.Top > panel1.Height)
+           
+            if (pctb1.Top > panel1.Height)
             {
-                pictureBox1.Top = -panel1.Height;
+                pctb1.Top = -panel1.Height;
             }
             else
             {
-                pictureBox1.Top += speed;
+                pctb1.Top += speed;
             }
-            if (pictureBox3.Top > panel1.Height)
+            if (pctb2.Top > panel1.Height)
             {
-                pictureBox3.Top = (-panel1.Height * 2) + pictureBox3.Top;
+                pctb2.Top = (-panel1.Height * 2) + pctb2.Top;
             }
             else
             {
-                pictureBox3.Top += speed;
+                pctb2.Top += speed;
             }
         }
+
+        void movePictureBox1(int speed)
+        {
+            if (pctb3.Top > panel2.Height)
+            {
+                pctb3.Top = -panel2.Height;
+            }
+            else
+            {
+                pctb3.Top += speed;
+            }
+            if (pctb4.Top > panel2.Height)
+            {
+                pctb4.Top = (-panel2.Height * 2) + pctb4.Top;
+            }
+            else
+            {
+                pctb4.Top += speed;
+            }
+        }
+
+        void movePictureBox2(int speed)
+        {
+            if (pctb5.Top > panel3.Height)
+            {
+                pctb5.Top = -panel3.Height;
+            }
+            else
+            {
+                pctb5.Top += speed;
+            }
+            if (pctb6.Top > panel1.Height)
+            {
+                pctb6.Top = (-panel3.Height * 2) + pctb6.Top;
+            }
+            else
+            {
+                pctb6.Top += speed;
+            }
+        }
+
+        private async void timer1_Tick(object sender, EventArgs e)
+        {
+            movePictureBox(10);
+            await Task.Delay(300);
+            timer2.Start();
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private async void timer2_Tick(object sender, EventArgs e)
+        {
+            movePictureBox1(10);
+            await Task.Delay(500);
+            timer3.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            movePictureBox2(10);
         }
     }
 }

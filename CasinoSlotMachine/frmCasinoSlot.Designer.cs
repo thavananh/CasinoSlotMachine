@@ -46,25 +46,29 @@
             pictureBox1 = new PictureBox();
             pctb1 = new PictureBox();
             button4 = new Button();
-            panel2 = new Panel();
-            pctb3 = new PictureBox();
-            pctb4 = new PictureBox();
-            panel3 = new Panel();
-            pctb5 = new PictureBox();
-            pctb6 = new PictureBox();
             timer2 = new System.Windows.Forms.Timer(components);
             timer3 = new System.Windows.Forms.Timer(components);
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox7 = new PictureBox();
             gradientPanelSoTienThuong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctb2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctb1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pctb3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pctb4).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pctb5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pctb6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // gradientLabelSoTienThuong
@@ -272,70 +276,6 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(pctb3);
-            panel2.Controls.Add(pctb4);
-            panel2.Location = new Point(319, 157);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(291, 477);
-            panel2.TabIndex = 16;
-            // 
-            // pctb3
-            // 
-            pctb3.BackColor = Color.Transparent;
-            pctb3.BackgroundImage = Properties.Resources._1;
-            pctb3.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb3.Location = new Point(0, 0);
-            pctb3.Name = "pctb3";
-            pctb3.Size = new Size(291, 219);
-            pctb3.TabIndex = 14;
-            pctb3.TabStop = false;
-            // 
-            // pctb4
-            // 
-            pctb4.BackColor = Color.Transparent;
-            pctb4.BackgroundImage = Properties.Resources._2;
-            pctb4.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb4.Location = new Point(0, 258);
-            pctb4.Name = "pctb4";
-            pctb4.Size = new Size(291, 219);
-            pctb4.TabIndex = 13;
-            pctb4.TabStop = false;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(pctb5);
-            panel3.Controls.Add(pctb6);
-            panel3.Location = new Point(626, 156);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(291, 477);
-            panel3.TabIndex = 17;
-            // 
-            // pctb5
-            // 
-            pctb5.BackColor = Color.Transparent;
-            pctb5.BackgroundImage = Properties.Resources._1;
-            pctb5.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb5.Location = new Point(0, 0);
-            pctb5.Name = "pctb5";
-            pctb5.Size = new Size(291, 219);
-            pctb5.TabIndex = 14;
-            pctb5.TabStop = false;
-            // 
-            // pctb6
-            // 
-            pctb6.BackColor = Color.Transparent;
-            pctb6.BackgroundImage = Properties.Resources._2;
-            pctb6.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb6.Location = new Point(0, 258);
-            pctb6.Name = "pctb6";
-            pctb6.Size = new Size(291, 219);
-            pctb6.TabIndex = 13;
-            pctb6.TabStop = false;
-            // 
             // timer2
             // 
             timer2.Interval = 1;
@@ -345,6 +285,94 @@
             // 
             timer3.Interval = 1;
             timer3.Tick += timer3_Tick;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = Properties.Resources._2;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(0, 365);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(291, 219);
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = Properties.Resources._1;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(0, -119);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(291, 219);
+            pictureBox3.TabIndex = 14;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = Properties.Resources._2;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(0, 119);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(291, 219);
+            pictureBox2.TabIndex = 15;
+            pictureBox2.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Location = new Point(319, 157);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(291, 477);
+            panel2.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(pictureBox5);
+            panel3.Controls.Add(pictureBox6);
+            panel3.Controls.Add(pictureBox7);
+            panel3.Location = new Point(623, 157);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(291, 477);
+            panel3.TabIndex = 16;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = Properties.Resources._2;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(0, 119);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(291, 219);
+            pictureBox5.TabIndex = 15;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = Properties.Resources._1;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(0, -119);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(291, 219);
+            pictureBox6.TabIndex = 14;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackgroundImage = Properties.Resources._2;
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(0, 365);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(291, 219);
+            pictureBox7.TabIndex = 13;
+            pictureBox7.TabStop = false;
             // 
             // frmCasinoSlot
             // 
@@ -376,12 +404,14 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctb1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pctb3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pctb4).EndInit();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pctb5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pctb6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -404,14 +434,16 @@
         private Panel panel1;
         private Button button4;
         private PictureBox pctb1;
-        private Panel panel2;
-        private PictureBox pctb3;
-        private PictureBox pctb4;
-        private Panel panel3;
-        private PictureBox pctb5;
-        private PictureBox pctb6;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private Panel panel2;
+        private Panel panel3;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox7;
     }
 }

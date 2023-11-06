@@ -33,6 +33,7 @@ namespace CasinoSlotMachine
 
         void movePictureBox(int speed)
         {
+
             if (pctb1.Top > panel1.Height)
             {
 
@@ -51,13 +52,13 @@ namespace CasinoSlotMachine
             {
                 pictureBox1.Top += speed;
             }
-            if (pictureBox1.Location.Y == 123)
+            if (pctb2.Location.Y == 123)
             {
                 scrollTime1++;
             }
             if (pctb2.Top > panel1.Height)
             {
-                
+
                 pctb2.Top = -panel1.Height;
             }
             else
@@ -65,51 +66,52 @@ namespace CasinoSlotMachine
                 pctb2.Top += speed;
             }
 
+
         }
 
         void movePictureBox1(int speed)
         {
-            if (pctb3.Top > panel2.Height)
-            {
+            //if (pctb3.Top > panel2.Height)
+            //{
 
-                pctb3.Top = -panel2.Height;
-            }
-            else
-            {
-                pctb3.Top += speed;
-            }
-            if (pctb4.Top > panel2.Height)
-            {
-                scrollTime2++;
-                pctb4.Top = -panel2.Height;
-            }
-            else
-            {
-                pctb4.Top += speed;
-            }
+            //    pctb3.Top = -panel2.Height;
+            //}
+            //else
+            //{
+            //    pctb3.Top += speed;
+            //}
+            //if (pctb4.Top > panel2.Height)
+            //{
+            //    scrollTime2++;
+            //    pctb4.Top = -panel2.Height;
+            //}
+            //else
+            //{
+            //    pctb4.Top += speed;
+            //}
 
         }
 
         void movePictureBox2(int speed)
         {
-            if (pctb5.Top > panel3.Height)
-            {
+            //if (pctb5.Top > panel3.Height)
+            //{
 
-                pctb5.Top = -panel3.Height;
-            }
-            else
-            {
-                pctb5.Top += speed;
-            }
-            if (pctb6.Top > panel1.Height)
-            {
-                scrollTime3++;
-                pctb6.Top = -panel3.Height;
-            }
-            else
-            {
-                pctb6.Top += speed;
-            }
+            //    pctb5.Top = -panel3.Height;
+            //}
+            //else
+            //{
+            //    pctb5.Top += speed;
+            //}
+            //if (pctb6.Top > panel1.Height)
+            //{
+            //    scrollTime3++;
+            //    pctb6.Top = -panel3.Height;
+            //}
+            //else
+            //{
+            //    pctb6.Top += speed;
+            //}
 
         }
 

@@ -35,30 +35,43 @@ namespace CasinoSlotMachine
         {
             if (pctb1.Top > panel1.Height)
             {
-                
+
                 pctb1.Top = -panel1.Height;
             }
             else
             {
                 pctb1.Top += speed;
             }
-            if (pctb2.Top > panel1.Height)
+            if (pictureBox1.Top > panel1.Height)
+            {
+
+                pictureBox1.Top = -panel1.Height;
+            }
+            else
+            {
+                pictureBox1.Top += speed;
+            }
+            if (pictureBox1.Location.Y == 123)
             {
                 scrollTime1++;
+            }
+            if (pctb2.Top > panel1.Height)
+            {
+                
                 pctb2.Top = -panel1.Height;
             }
             else
             {
                 pctb2.Top += speed;
             }
-            
+
         }
 
         void movePictureBox1(int speed)
         {
             if (pctb3.Top > panel2.Height)
             {
-                
+
                 pctb3.Top = -panel2.Height;
             }
             else
@@ -74,14 +87,14 @@ namespace CasinoSlotMachine
             {
                 pctb4.Top += speed;
             }
-            
+
         }
 
         void movePictureBox2(int speed)
         {
             if (pctb5.Top > panel3.Height)
             {
-                
+
                 pctb5.Top = -panel3.Height;
             }
             else
@@ -97,7 +110,7 @@ namespace CasinoSlotMachine
             {
                 pctb6.Top += speed;
             }
-            
+
         }
 
         private async void timer1_Tick(object sender, EventArgs e)

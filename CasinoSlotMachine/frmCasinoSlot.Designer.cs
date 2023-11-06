@@ -43,6 +43,7 @@
             pctb2 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             pctb1 = new PictureBox();
             button4 = new Button();
             panel2 = new Panel();
@@ -56,6 +57,7 @@
             gradientPanelSoTienThuong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctb2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pctb1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctb3).BeginInit();
@@ -216,7 +218,7 @@
             pctb2.BackColor = Color.Transparent;
             pctb2.BackgroundImage = Properties.Resources._2;
             pctb2.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb2.Location = new Point(0, 258);
+            pctb2.Location = new Point(0, 365);
             pctb2.Name = "pctb2";
             pctb2.Size = new Size(291, 219);
             pctb2.TabIndex = 13;
@@ -230,6 +232,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pctb1);
             panel1.Controls.Add(pctb2);
             panel1.Location = new Point(5, 157);
@@ -237,12 +240,23 @@
             panel1.Size = new Size(291, 477);
             panel1.TabIndex = 14;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = Properties.Resources._2;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(0, 119);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(291, 219);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            // 
             // pctb1
             // 
             pctb1.BackColor = Color.Transparent;
             pctb1.BackgroundImage = Properties.Resources._1;
             pctb1.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb1.Location = new Point(0, 0);
+            pctb1.Location = new Point(0, -119);
             pctb1.Name = "pctb1";
             pctb1.Size = new Size(291, 219);
             pctb1.TabIndex = 14;
@@ -360,6 +374,7 @@
             gradientPanelSoTienThuong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pctb2).EndInit();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pctb1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pctb3).EndInit();
@@ -397,5 +412,6 @@
         private PictureBox pctb6;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private PictureBox pictureBox1;
     }
 }

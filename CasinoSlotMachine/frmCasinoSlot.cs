@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +49,23 @@ namespace CasinoSlotMachine
         }
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
-            loadHinhAnh();
+            loadTien();
+        }
+
+        decimal totalWin = 0;
+        decimal credit = 50000;
+
+        void loadTien()
+        {
+            glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+            cboBet.Items.Add(10.ToString("C", new CultureInfo("en-us")));
+            cboBet.Items.Add(20.ToString("C", new CultureInfo("en-us")));
+            cboBet.Items.Add(50.ToString("C", new CultureInfo("en-us")));
+            cboBet.Items.Add(100.ToString("C", new CultureInfo("en-us")));
+            cboBet.Items.Add(200.ToString("C", new CultureInfo("en-us")));
+            cboBet.Items.Add(500.ToString("C", new CultureInfo("en-us")));
+            cboBet.SelectedIndex = 0;
+            glSoTienThuong.Text = 0.ToString("C", new CultureInfo("en-us"));
         }
 
         void loadHinhAnh()
@@ -174,7 +192,7 @@ namespace CasinoSlotMachine
             {
                 pctb2.Top += speed;
             }
-            if (col1[randNum1].Location.Y == 121)
+            if (col1[randNum1].Location.Y == 122)
             {
                 scrollTime1++;
             }
@@ -209,7 +227,7 @@ namespace CasinoSlotMachine
             {
                 pctb5.Top += speed;
             }
-            if (col2[randNum2].Location.Y == 121)
+            if (col2[randNum2].Location.Y == 122)
             {
                 scrollTime2++;
             }
@@ -245,7 +263,7 @@ namespace CasinoSlotMachine
             {
                 pctb8.Top += speed;
             }
-            if (col3[randNum3].Location.Y == 121)
+            if (col3[randNum3].Location.Y == 122)
             {
                 scrollTime3++;
             }
@@ -261,13 +279,17 @@ namespace CasinoSlotMachine
 
         }
 
-        bool isWin()
+        int isWin()
         {
-            if ((col1[randNum1].Tag.ToString() == col2[randNum2].Tag.ToString()) || (col2[randNum2].Tag.ToString() == col3[randNum3].Tag.ToString()))
+            if ((col1[randNum1].Tag.ToString() == col2[randNum2].Tag.ToString()) && (col2[randNum2].Tag.ToString() == col3[randNum3].Tag.ToString()))
             {
-                return true;
+                return 2;
             }
-            return false;
+            else if ((col1[randNum1].Tag.ToString() == col2[randNum2].Tag.ToString()) || (col2[randNum2].Tag.ToString() == col3[randNum3].Tag.ToString()))
+            {
+                return 1;
+            }
+            return 0;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -275,10 +297,22 @@ namespace CasinoSlotMachine
             if (scrollTime1 >= 3)
             {
                 timer1.Stop();
-                if (isWin() && !timer2.Enabled && !timer3.Enabled)
+                if (!timer1.Enabled && !timer2.Enabled && !timer3.Enabled)
                 {
-
-                    MessageBox.Show("bạn đã chiến thắng");
+                    if (isWin() == 1)
+                    {
+                        totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                        glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                        credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                        glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                    }
+                    else if (isWin() == 2)
+                    {
+                        totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                        glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                        credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                        glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                    }
                 }
                 return;
             }
@@ -286,32 +320,47 @@ namespace CasinoSlotMachine
 
         }
 
-        decimal totalWin = 0;
-        decimal credit = 0;
-        decimal bet = 0;
+
 
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            scrollTime1 = 0;
-            scrollTime2 = 0;
-            scrollTime3 = 0;
-            timer1.Start();
-            timer2.Start();
-            timer3.Start();
-            loadHinhAnh();
+            if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+            {
+                credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
+                glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                loadHinhAnh();
+                scrollTime1 = 0;
+                scrollTime2 = 0;
+                scrollTime3 = 0;
+                timer1.Start();
+                timer2.Start();
+                timer3.Start();
+            }
+            else
+            {
+                MessageBox.Show("Dừng lại là thất bại, nạp tiền chơi tiếp đi !!!");
+            }
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (scrollTime2 >= 3)
             {
                 timer2.Stop();
-                if (isWin() && !timer1.Enabled && !timer3.Enabled)
+                if (isWin() == 1)
                 {
-
-                    MessageBox.Show("bạn đã chiến thắng");
-
+                    totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                    glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                    credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                    glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                }
+                else if (isWin() == 2)
+                {
+                    totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                    glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                    credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                    glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                 }
                 return;
             }
@@ -324,15 +373,31 @@ namespace CasinoSlotMachine
             if (scrollTime3 >= 3)
             {
                 timer3.Stop();
-                if (isWin() && !timer1.Enabled && !timer2.Enabled)
+                if (!timer1.Enabled && !timer2.Enabled && !timer3.Enabled)
                 {
-
-                    MessageBox.Show("bạn đã chiến thắng");
-
+                    if (isWin() == 1)
+                    {
+                        totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                        glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                        credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
+                        glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                    }
+                    else if (isWin() == 2)
+                    {
+                        totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                        glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
+                        credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
+                        glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                    }
                 }
                 return;
             }
             movePictureBox2(15);
+        }
+
+        private void glSoTienThuong_TextChanged(object sender, EventArgs e)
+        {
+            glSoTienThuong.Left = (this.ClientSize.Width - glSoTienThuong.Width) / 2;
         }
     }
 }

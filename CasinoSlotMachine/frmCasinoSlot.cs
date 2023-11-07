@@ -21,13 +21,16 @@ namespace CasinoSlotMachine
         List<PictureBox> col1;
         List<PictureBox> col2;
         List<PictureBox> col3;
-        Dictionary<int, Bitmap> assetList;
+        Dictionary<int, ImageTaoLao> assetList;
 
         static int scrollTime1 = 0;
         static int scrollTime2 = 0;
         static int scrollTime3 = 0;
 
-        
+        static Random rand = new Random();
+        static int randNum1, randNum2, randNum3;
+
+
 
         public class ImageTaoLao
         {
@@ -38,7 +41,7 @@ namespace CasinoSlotMachine
 
             private Image asset;
 
-            public ImageTaoLao(int id, Image asset)
+            public ImageTaoLao(int id, Bitmap asset)
             {
                 this.IdImage = id;
                 this.Asset = asset;
@@ -46,41 +49,85 @@ namespace CasinoSlotMachine
         }
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
-            Random randTaoLoa = new Random();
-            //ImageTaoLao img1 = new ImageTaoLao(1, Properties.Resources._1);
-            //ImageTaoLao img2 = new ImageTaoLao(1, Properties.Resources._2);
-            //ImageTaoLao img3 = new ImageTaoLao(1, Properties.Resources._3);
-            //ImageTaoLao img4 = new ImageTaoLao(1, Properties.Resources._4);
-            //ImageTaoLao img5 = new ImageTaoLao(1, Properties.Resources._5);
-            //ImageTaoLao img6 = new ImageTaoLao(1, Properties.Resources._6);
-            //ImageTaoLao img7 = new ImageTaoLao(1, Properties.Resources._7);
+            ImageTaoLao img1 = new ImageTaoLao(1, Properties.Resources._1);
+            ImageTaoLao img2 = new ImageTaoLao(2, Properties.Resources._2);
+            ImageTaoLao img3 = new ImageTaoLao(3, Properties.Resources._3);
+            ImageTaoLao img4 = new ImageTaoLao(4, Properties.Resources._4);
+            ImageTaoLao img5 = new ImageTaoLao(5, Properties.Resources._5);
+            ImageTaoLao img6 = new ImageTaoLao(6, Properties.Resources._6);
+            ImageTaoLao img7 = new ImageTaoLao(7, Properties.Resources._7);
 
-            assetList = new Dictionary<int, Bitmap>()
+            assetList = new Dictionary<int, ImageTaoLao>()
             {
-                {1, Properties.Resources._1},
-                {2, Properties.Resources._1},
-                {3, Properties.Resources._2},
-                {4, Properties.Resources._2},
-                {5, Properties.Resources._2},
-                {6, Properties.Resources._3},
-                {7, Properties.Resources._3},
-                {8, Properties.Resources._4},
-                {9, Properties.Resources._5},
-                {10, Properties.Resources._6},
-                {11, Properties.Resources._7},
-
-                //{1, }
-
+                //{1, Properties.Resources._1},
+                //{2, Properties.Resources._1},
+                //{3, Properties.Resources._2},
+                //{4, Properties.Resources._2},
+                //{5, Properties.Resources._2},
+                //{6, Properties.Resources._3},
+                //{7, Properties.Resources._3},
+                //{8, Properties.Resources._4},
+                //{9, Properties.Resources._5},
+                //{10, Properties.Resources._6},
+                //{11, Properties.Resources._7},
+                {1, img1},
+                {2, img1},
+                {3, img1},
+                {4, img1},
+                {5, img2},
+                {6, img2},
+                {7, img2},
+                {8, img3},
+                {9, img3},
+                {10, img4},
+                {11, img4},
+                {12, img5},
+                {13, img6},
+                {14, img7},
+                //{1, img1},
+                //{2, img1},
+                //{3, img1},
+                //{4, img1},
+                //{5, img1},
+                //{6, img1},
+                //{7, img1},
+                //{8, img1},
+                //{9, img1},
+                //{10, img1},
+                //{11, img1},
+                //{12, img1},
+                //{13, img1},
+                //{14, img1},
             };
-            pctb1.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb2.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb3.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb4.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb5.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb6.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb7.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb8.BackgroundImage = assetList[rand.Next(1, 12)];
-            pctb9.BackgroundImage = assetList[rand.Next(1, 12)];
+            
+
+            int randTaoLao = rand.Next(1, 15);
+            pctb1.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb1.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb2.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb2.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb3.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb3.Tag  = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb4.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb4.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb5.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb5.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb6.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb6.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb7.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb7.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb8.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb8.Tag = assetList[randTaoLao].IdImage;
+            randTaoLao = rand.Next(1, 15);
+            pctb9.BackgroundImage = assetList[randTaoLao].Asset;
+            pctb9.Tag = assetList[randTaoLao].IdImage;
             col1 = new List<PictureBox>()
             {
                 pctb1,
@@ -101,8 +148,7 @@ namespace CasinoSlotMachine
                 pctb9
             };
         }
-        static Random rand = new Random();
-        static int randNum1, randNum2, randNum3;
+        
 
         void movePictureBox(int speed)
         {
@@ -214,7 +260,7 @@ namespace CasinoSlotMachine
 
         bool isWin()
         {
-            if ((col1[randNum1].BackgroundImage == col2[randNum2].BackgroundImage) || (col2[randNum2].BackgroundImage == col3[randNum3].BackgroundImage))
+            if ((col1[randNum1].Tag.ToString() == col2[randNum2].Tag.ToString()) || (col2[randNum2].Tag.ToString() == col3[randNum3].Tag.ToString()))
             {
                 return true;
             }

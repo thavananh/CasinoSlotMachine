@@ -79,9 +79,9 @@
             gradientLabelSoTienThuong.BackgroundColorTop = Color.Empty;
             gradientLabelSoTienThuong.BackgroundGradientAngel = 0F;
             gradientLabelSoTienThuong.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabelSoTienThuong.Location = new Point(226, 17);
+            gradientLabelSoTienThuong.Location = new Point(198, 13);
             gradientLabelSoTienThuong.Name = "gradientLabelSoTienThuong";
-            gradientLabelSoTienThuong.Size = new Size(503, 106);
+            gradientLabelSoTienThuong.Size = new Size(404, 86);
             gradientLabelSoTienThuong.TabIndex = 0;
             gradientLabelSoTienThuong.Text = "320.000.000";
             gradientLabelSoTienThuong.TextColorBottom = Color.FromArgb(255, 229, 47);
@@ -95,9 +95,8 @@
             gradientPanelSoTienThuong.Controls.Add(gradientLabelSoTienThuong);
             gradientPanelSoTienThuong.GradientAngle = 45F;
             gradientPanelSoTienThuong.Location = new Point(0, 0);
-            gradientPanelSoTienThuong.Margin = new Padding(3, 4, 3, 4);
             gradientPanelSoTienThuong.Name = "gradientPanelSoTienThuong";
-            gradientPanelSoTienThuong.Size = new Size(914, 149);
+            gradientPanelSoTienThuong.Size = new Size(800, 112);
             gradientPanelSoTienThuong.TabIndex = 1;
             // 
             // gradientPanel1
@@ -105,10 +104,9 @@
             gradientPanel1.ColorBottom = Color.FromArgb(204, 157, 59);
             gradientPanel1.ColorTop = Color.FromArgb(255, 192, 128);
             gradientPanel1.GradientAngle = 90F;
-            gradientPanel1.Location = new Point(302, 157);
-            gradientPanel1.Margin = new Padding(3, 4, 3, 4);
+            gradientPanel1.Location = new Point(264, 118);
             gradientPanel1.Name = "gradientPanel1";
-            gradientPanel1.Size = new Size(11, 477);
+            gradientPanel1.Size = new Size(10, 358);
             gradientPanel1.TabIndex = 2;
             // 
             // gradientPanel2
@@ -116,38 +114,34 @@
             gradientPanel2.ColorBottom = Color.FromArgb(204, 157, 59);
             gradientPanel2.ColorTop = Color.FromArgb(255, 192, 128);
             gradientPanel2.GradientAngle = 90F;
-            gradientPanel2.Location = new Point(609, 157);
-            gradientPanel2.Margin = new Padding(3, 4, 3, 4);
+            gradientPanel2.Location = new Point(533, 118);
             gradientPanel2.Name = "gradientPanel2";
-            gradientPanel2.Size = new Size(11, 477);
+            gradientPanel2.Size = new Size(10, 358);
             gradientPanel2.TabIndex = 3;
             // 
             // button1
             // 
-            button1.Location = new Point(5, 669);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(4, 485);
             button1.Name = "button1";
-            button1.Size = new Size(41, 89);
+            button1.Size = new Size(36, 67);
             button1.TabIndex = 4;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(48, 669);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(44, 488);
             button2.Name = "button2";
-            button2.Size = new Size(104, 39);
+            button2.Size = new Size(91, 29);
             button2.TabIndex = 5;
             button2.Text = "GAMES MENU";
             button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(48, 716);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Location = new Point(44, 523);
             button3.Name = "button3";
-            button3.Size = new Size(104, 39);
+            button3.Size = new Size(91, 29);
             button3.TabIndex = 6;
             button3.Text = "GAME RULES";
             button3.UseVisualStyleBackColor = true;
@@ -159,9 +153,9 @@
             gradientLabel1.BackgroundColorTop = Color.Blue;
             gradientLabel1.BackgroundGradientAngel = 0F;
             gradientLabel1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel1.Location = new Point(163, 691);
+            gradientLabel1.Location = new Point(145, 504);
             gradientLabel1.Name = "gradientLabel1";
-            gradientLabel1.Size = new Size(150, 50);
+            gradientLabel1.Size = new Size(116, 40);
             gradientLabel1.TabIndex = 7;
             gradientLabel1.Text = "CREDIT";
             gradientLabel1.TextColorBottom = Color.Yellow;
@@ -175,9 +169,9 @@
             gradientLabel2.BackgroundColorTop = Color.Empty;
             gradientLabel2.BackgroundGradientAngel = 0F;
             gradientLabel2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel2.Location = new Point(319, 691);
+            gradientLabel2.Location = new Point(281, 504);
             gradientLabel2.Name = "gradientLabel2";
-            gradientLabel2.Size = new Size(231, 50);
+            gradientLabel2.Size = new Size(186, 40);
             gradientLabel2.TabIndex = 8;
             gradientLabel2.Text = "000.000.000";
             gradientLabel2.TextColorBottom = Color.White;
@@ -191,9 +185,9 @@
             gradientLabel3.BackgroundColorTop = Color.Blue;
             gradientLabel3.BackgroundGradientAngel = 0F;
             gradientLabel3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel3.Location = new Point(569, 691);
+            gradientLabel3.Location = new Point(500, 504);
             gradientLabel3.Name = "gradientLabel3";
-            gradientLabel3.Size = new Size(88, 50);
+            gradientLabel3.Size = new Size(68, 40);
             gradientLabel3.TabIndex = 9;
             gradientLabel3.Text = "BET";
             gradientLabel3.TextColorBottom = Color.Yellow;
@@ -207,9 +201,9 @@
             gradientLabel4.BackgroundColorTop = Color.Empty;
             gradientLabel4.BackgroundGradientAngel = 0F;
             gradientLabel4.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel4.Location = new Point(654, 691);
+            gradientLabel4.Location = new Point(574, 504);
             gradientLabel4.Name = "gradientLabel4";
-            gradientLabel4.Size = new Size(231, 50);
+            gradientLabel4.Size = new Size(186, 40);
             gradientLabel4.TabIndex = 10;
             gradientLabel4.Text = "000.000.000";
             gradientLabel4.TextColorBottom = Color.White;
@@ -221,9 +215,10 @@
             pctb3.BackColor = Color.Transparent;
             pctb3.BackgroundImage = Properties.Resources._2;
             pctb3.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb3.Location = new Point(0, 365);
+            pctb3.Location = new Point(0, 274);
+            pctb3.Margin = new Padding(3, 2, 3, 2);
             pctb3.Name = "pctb3";
-            pctb3.Size = new Size(291, 219);
+            pctb3.Size = new Size(255, 164);
             pctb3.TabIndex = 13;
             pctb3.TabStop = false;
             // 
@@ -238,9 +233,10 @@
             panel1.Controls.Add(pctb2);
             panel1.Controls.Add(pctb1);
             panel1.Controls.Add(pctb3);
-            panel1.Location = new Point(5, 157);
+            panel1.Location = new Point(4, 118);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(291, 477);
+            panel1.Size = new Size(255, 358);
             panel1.TabIndex = 14;
             // 
             // pctb2
@@ -248,9 +244,10 @@
             pctb2.BackColor = Color.Transparent;
             pctb2.BackgroundImage = Properties.Resources._2;
             pctb2.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb2.Location = new Point(0, 119);
+            pctb2.Location = new Point(0, 89);
+            pctb2.Margin = new Padding(3, 2, 3, 2);
             pctb2.Name = "pctb2";
-            pctb2.Size = new Size(291, 219);
+            pctb2.Size = new Size(255, 164);
             pctb2.TabIndex = 15;
             pctb2.TabStop = false;
             // 
@@ -259,18 +256,19 @@
             pctb1.BackColor = Color.Transparent;
             pctb1.BackgroundImage = Properties.Resources._1;
             pctb1.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb1.Location = new Point(0, -119);
+            pctb1.Location = new Point(0, -89);
+            pctb1.Margin = new Padding(3, 2, 3, 2);
             pctb1.Name = "pctb1";
-            pctb1.Size = new Size(291, 219);
+            pctb1.Size = new Size(255, 164);
             pctb1.TabIndex = 14;
             pctb1.TabStop = false;
-            pctb1.Click += pctb1_Click;
             // 
             // btnPlay
             // 
-            btnPlay.Location = new Point(728, 659);
+            btnPlay.Location = new Point(639, 480);
+            btnPlay.Margin = new Padding(3, 2, 3, 2);
             btnPlay.Name = "btnPlay";
-            btnPlay.Size = new Size(94, 29);
+            btnPlay.Size = new Size(82, 22);
             btnPlay.TabIndex = 15;
             btnPlay.Text = "Chơi";
             btnPlay.UseVisualStyleBackColor = true;
@@ -291,9 +289,10 @@
             pctb6.BackColor = Color.Transparent;
             pctb6.BackgroundImage = Properties.Resources._2;
             pctb6.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb6.Location = new Point(0, 365);
+            pctb6.Location = new Point(0, 274);
+            pctb6.Margin = new Padding(3, 2, 3, 2);
             pctb6.Name = "pctb6";
-            pctb6.Size = new Size(291, 219);
+            pctb6.Size = new Size(255, 164);
             pctb6.TabIndex = 13;
             pctb6.TabStop = false;
             // 
@@ -302,9 +301,10 @@
             pctb4.BackColor = Color.Transparent;
             pctb4.BackgroundImage = Properties.Resources._1;
             pctb4.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb4.Location = new Point(0, -119);
+            pctb4.Location = new Point(0, -89);
+            pctb4.Margin = new Padding(3, 2, 3, 2);
             pctb4.Name = "pctb4";
-            pctb4.Size = new Size(291, 219);
+            pctb4.Size = new Size(255, 164);
             pctb4.TabIndex = 14;
             pctb4.TabStop = false;
             // 
@@ -313,9 +313,10 @@
             pctb5.BackColor = Color.Transparent;
             pctb5.BackgroundImage = Properties.Resources._2;
             pctb5.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb5.Location = new Point(0, 119);
+            pctb5.Location = new Point(0, 89);
+            pctb5.Margin = new Padding(3, 2, 3, 2);
             pctb5.Name = "pctb5";
-            pctb5.Size = new Size(291, 219);
+            pctb5.Size = new Size(255, 164);
             pctb5.TabIndex = 15;
             pctb5.TabStop = false;
             // 
@@ -325,9 +326,10 @@
             panel2.Controls.Add(pctb5);
             panel2.Controls.Add(pctb4);
             panel2.Controls.Add(pctb6);
-            panel2.Location = new Point(319, 157);
+            panel2.Location = new Point(279, 118);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(291, 477);
+            panel2.Size = new Size(255, 358);
             panel2.TabIndex = 15;
             // 
             // panel3
@@ -336,9 +338,10 @@
             panel3.Controls.Add(pctb8);
             panel3.Controls.Add(pctb7);
             panel3.Controls.Add(pctb9);
-            panel3.Location = new Point(623, 157);
+            panel3.Location = new Point(545, 118);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(291, 477);
+            panel3.Size = new Size(255, 358);
             panel3.TabIndex = 16;
             // 
             // pctb8
@@ -346,9 +349,10 @@
             pctb8.BackColor = Color.Transparent;
             pctb8.BackgroundImage = Properties.Resources._2;
             pctb8.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb8.Location = new Point(0, 119);
+            pctb8.Location = new Point(0, 89);
+            pctb8.Margin = new Padding(3, 2, 3, 2);
             pctb8.Name = "pctb8";
-            pctb8.Size = new Size(291, 219);
+            pctb8.Size = new Size(255, 164);
             pctb8.TabIndex = 15;
             pctb8.TabStop = false;
             // 
@@ -357,9 +361,10 @@
             pctb7.BackColor = Color.Transparent;
             pctb7.BackgroundImage = Properties.Resources._1;
             pctb7.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb7.Location = new Point(0, -119);
+            pctb7.Location = new Point(0, -89);
+            pctb7.Margin = new Padding(3, 2, 3, 2);
             pctb7.Name = "pctb7";
-            pctb7.Size = new Size(291, 219);
+            pctb7.Size = new Size(255, 164);
             pctb7.TabIndex = 14;
             pctb7.TabStop = false;
             // 
@@ -368,18 +373,19 @@
             pctb9.BackColor = Color.Transparent;
             pctb9.BackgroundImage = Properties.Resources._2;
             pctb9.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb9.Location = new Point(0, 365);
+            pctb9.Location = new Point(0, 274);
+            pctb9.Margin = new Padding(3, 2, 3, 2);
             pctb9.Name = "pctb9";
-            pctb9.Size = new Size(291, 219);
+            pctb9.Size = new Size(255, 164);
             pctb9.TabIndex = 13;
             pctb9.TabStop = false;
             // 
             // frmCasinoSlot
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(914, 759);
+            ClientSize = new Size(800, 556);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(btnPlay);
@@ -394,7 +400,6 @@
             Controls.Add(gradientPanel2);
             Controls.Add(gradientPanel1);
             Controls.Add(gradientPanelSoTienThuong);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "frmCasinoSlot";
             Text = "frmCasinoSlot";
             Load += frmCasinoSlot_Load;

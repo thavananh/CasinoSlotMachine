@@ -30,8 +30,6 @@ namespace CasinoSlotMachine
         static Random rand = new Random();
         static int randNum1, randNum2, randNum3;
 
-
-
         public class ImageTaoLao
         {
             private int idImage;
@@ -48,6 +46,11 @@ namespace CasinoSlotMachine
             }
         }
         private void frmCasinoSlot_Load(object sender, EventArgs e)
+        {
+            loadHinhAnh();
+        }
+
+        void loadHinhAnh()
         {
             ImageTaoLao img1 = new ImageTaoLao(1, Properties.Resources._1);
             ImageTaoLao img2 = new ImageTaoLao(2, Properties.Resources._2);
@@ -99,7 +102,7 @@ namespace CasinoSlotMachine
                 //{13, img1},
                 //{14, img1},
             };
-            
+
 
             int randTaoLao = rand.Next(1, 15);
             pctb1.BackgroundImage = assetList[randTaoLao].Asset;
@@ -109,7 +112,7 @@ namespace CasinoSlotMachine
             pctb2.Tag = assetList[randTaoLao].IdImage;
             randTaoLao = rand.Next(1, 15);
             pctb3.BackgroundImage = assetList[randTaoLao].Asset;
-            pctb3.Tag  = assetList[randTaoLao].IdImage;
+            pctb3.Tag = assetList[randTaoLao].IdImage;
             randTaoLao = rand.Next(1, 15);
             pctb4.BackgroundImage = assetList[randTaoLao].Asset;
             pctb4.Tag = assetList[randTaoLao].IdImage;
@@ -148,7 +151,7 @@ namespace CasinoSlotMachine
                 pctb9
             };
         }
-        
+
 
         void movePictureBox(int speed)
         {
@@ -156,7 +159,7 @@ namespace CasinoSlotMachine
             if (pctb1.Top > panel1.Height)
             {
 
-                pctb1.Top = -panel1.Height;
+                pctb1.Top = -panel1.Height / 2;
             }
             else
             {
@@ -165,20 +168,20 @@ namespace CasinoSlotMachine
             if (pctb2.Top > panel1.Height)
             {
 
-                pctb2.Top = -panel1.Height;
+                pctb2.Top = -panel1.Height / 2;
             }
             else
             {
                 pctb2.Top += speed;
             }
-            if (col1[randNum1].Location.Y == 123)
+            if (col1[randNum1].Location.Y == 121)
             {
                 scrollTime1++;
             }
             if (pctb3.Top > panel1.Height)
             {
 
-                pctb3.Top = -panel1.Height;
+                pctb3.Top = -panel1.Height / 2;
             }
             else
             {
@@ -191,7 +194,7 @@ namespace CasinoSlotMachine
             randNum2 = rand.Next(0, 3);
             if (pctb4.Top > panel2.Height)
             {
-                pctb4.Top = -panel2.Height;
+                pctb4.Top = -panel2.Height / 2;
             }
             else
             {
@@ -200,20 +203,20 @@ namespace CasinoSlotMachine
             if (pctb5.Top > panel2.Height)
             {
 
-                pctb5.Top = -panel1.Height;
+                pctb5.Top = -panel2.Height / 2;
             }
             else
             {
                 pctb5.Top += speed;
             }
-            if (col2[randNum2].Location.Y == 123)
+            if (col2[randNum2].Location.Y == 121)
             {
                 scrollTime2++;
             }
             if (pctb6.Top > panel2.Height)
             {
 
-                pctb6.Top = -panel2.Height;
+                pctb6.Top = -panel2.Height / 2;
             }
             else
             {
@@ -227,7 +230,7 @@ namespace CasinoSlotMachine
             randNum3 = rand.Next(0, 3);
             if (pctb7.Top > panel3.Height)
             {
-                pctb7.Top = -panel3.Height;
+                pctb7.Top = -panel3.Height / 2;
             }
             else
             {
@@ -236,20 +239,20 @@ namespace CasinoSlotMachine
             if (pctb8.Top > panel3.Height)
             {
 
-                pctb8.Top = -panel3.Height;
+                pctb8.Top = -panel3.Height / 2;
             }
             else
             {
                 pctb8.Top += speed;
             }
-            if (col3[randNum3].Location.Y == 123)
+            if (col3[randNum3].Location.Y == 121)
             {
                 scrollTime3++;
             }
             if (pctb9.Top > panel3.Height)
             {
 
-                pctb9.Top = -panel3.Height;
+                pctb9.Top = -panel3.Height / 2;
             }
             else
             {
@@ -287,7 +290,7 @@ namespace CasinoSlotMachine
         decimal credit = 0;
         decimal bet = 0;
 
-        
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -297,6 +300,7 @@ namespace CasinoSlotMachine
             timer1.Start();
             timer2.Start();
             timer3.Start();
+            loadHinhAnh();
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -329,11 +333,6 @@ namespace CasinoSlotMachine
                 return;
             }
             movePictureBox2(15);
-        }
-
-        private void pctb1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

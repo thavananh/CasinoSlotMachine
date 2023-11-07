@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,23 +18,95 @@ namespace CasinoSlotMachine
             InitializeComponent();
         }
 
-        private void frmCasinoSlot_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gradientLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
+        List<PictureBox> col1;
+        List<PictureBox> col2;
+        List<PictureBox> col3;
+        Dictionary<int, Bitmap> assetList;
 
         static int scrollTime1 = 0;
         static int scrollTime2 = 0;
         static int scrollTime3 = 0;
 
+        
+
+        public class ImageTaoLao
+        {
+            private int idImage;
+
+            public int IdImage { get => idImage; set => idImage = value; }
+            public Image Asset { get => asset; set => asset = value; }
+
+            private Image asset;
+
+            public ImageTaoLao(int id, Image asset)
+            {
+                this.IdImage = id;
+                this.Asset = asset;
+            }
+        }
+        private void frmCasinoSlot_Load(object sender, EventArgs e)
+        {
+            Random randTaoLoa = new Random();
+            //ImageTaoLao img1 = new ImageTaoLao(1, Properties.Resources._1);
+            //ImageTaoLao img2 = new ImageTaoLao(1, Properties.Resources._2);
+            //ImageTaoLao img3 = new ImageTaoLao(1, Properties.Resources._3);
+            //ImageTaoLao img4 = new ImageTaoLao(1, Properties.Resources._4);
+            //ImageTaoLao img5 = new ImageTaoLao(1, Properties.Resources._5);
+            //ImageTaoLao img6 = new ImageTaoLao(1, Properties.Resources._6);
+            //ImageTaoLao img7 = new ImageTaoLao(1, Properties.Resources._7);
+
+            assetList = new Dictionary<int, Bitmap>()
+            {
+                {1, Properties.Resources._1},
+                {2, Properties.Resources._1},
+                {3, Properties.Resources._2},
+                {4, Properties.Resources._2},
+                {5, Properties.Resources._2},
+                {6, Properties.Resources._3},
+                {7, Properties.Resources._3},
+                {8, Properties.Resources._4},
+                {9, Properties.Resources._5},
+                {10, Properties.Resources._6},
+                {11, Properties.Resources._7},
+
+                //{1, }
+
+            };
+            pctb1.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb2.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb3.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb4.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb5.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb6.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb7.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb8.BackgroundImage = assetList[rand.Next(1, 12)];
+            pctb9.BackgroundImage = assetList[rand.Next(1, 12)];
+            col1 = new List<PictureBox>()
+            {
+                pctb1,
+                pctb2,
+                pctb3
+
+            };
+            col2 = new List<PictureBox>()
+            {
+                pctb4,
+                pctb5,
+                pctb6
+            };
+            col3 = new List<PictureBox>()
+            {
+                pctb7,
+                pctb8,
+                pctb9
+            };
+        }
+        static Random rand = new Random();
+        static int randNum1, randNum2, randNum3;
+
         void movePictureBox(int speed)
         {
-
+            randNum1 = rand.Next(0, 3);
             if (pctb1.Top > panel1.Height)
             {
 
@@ -42,19 +115,6 @@ namespace CasinoSlotMachine
             else
             {
                 pctb1.Top += speed;
-            }
-            if (pictureBox1.Top > panel1.Height)
-            {
-
-                pictureBox1.Top = -panel1.Height;
-            }
-            else
-            {
-                pictureBox1.Top += speed;
-            }
-            if (pctb2.Location.Y == 123)
-            {
-                scrollTime1++;
             }
             if (pctb2.Top > panel1.Height)
             {
@@ -65,91 +125,169 @@ namespace CasinoSlotMachine
             {
                 pctb2.Top += speed;
             }
+            if (col1[randNum1].Location.Y == 123)
+            {
+                scrollTime1++;
+            }
+            if (pctb3.Top > panel1.Height)
+            {
 
-
+                pctb3.Top = -panel1.Height;
+            }
+            else
+            {
+                pctb3.Top += speed;
+            }
         }
 
         void movePictureBox1(int speed)
         {
-            //if (pctb3.Top > panel2.Height)
-            //{
+            randNum2 = rand.Next(0, 3);
+            if (pctb4.Top > panel2.Height)
+            {
+                pctb4.Top = -panel2.Height;
+            }
+            else
+            {
+                pctb4.Top += speed;
+            }
+            if (pctb5.Top > panel2.Height)
+            {
 
-            //    pctb3.Top = -panel2.Height;
-            //}
-            //else
-            //{
-            //    pctb3.Top += speed;
-            //}
-            //if (pctb4.Top > panel2.Height)
-            //{
-            //    scrollTime2++;
-            //    pctb4.Top = -panel2.Height;
-            //}
-            //else
-            //{
-            //    pctb4.Top += speed;
-            //}
+                pctb5.Top = -panel1.Height;
+            }
+            else
+            {
+                pctb5.Top += speed;
+            }
+            if (col2[randNum2].Location.Y == 123)
+            {
+                scrollTime2++;
+            }
+            if (pctb6.Top > panel2.Height)
+            {
+
+                pctb6.Top = -panel2.Height;
+            }
+            else
+            {
+                pctb6.Top += speed;
+            }
 
         }
 
         void movePictureBox2(int speed)
         {
-            //if (pctb5.Top > panel3.Height)
-            //{
+            randNum3 = rand.Next(0, 3);
+            if (pctb7.Top > panel3.Height)
+            {
+                pctb7.Top = -panel3.Height;
+            }
+            else
+            {
+                pctb7.Top += speed;
+            }
+            if (pctb8.Top > panel3.Height)
+            {
 
-            //    pctb5.Top = -panel3.Height;
-            //}
-            //else
-            //{
-            //    pctb5.Top += speed;
-            //}
-            //if (pctb6.Top > panel1.Height)
-            //{
-            //    scrollTime3++;
-            //    pctb6.Top = -panel3.Height;
-            //}
-            //else
-            //{
-            //    pctb6.Top += speed;
-            //}
+                pctb8.Top = -panel3.Height;
+            }
+            else
+            {
+                pctb8.Top += speed;
+            }
+            if (col3[randNum3].Location.Y == 123)
+            {
+                scrollTime3++;
+            }
+            if (pctb9.Top > panel3.Height)
+            {
+
+                pctb9.Top = -panel3.Height;
+            }
+            else
+            {
+                pctb9.Top += speed;
+            }
 
         }
 
-        private async void timer1_Tick(object sender, EventArgs e)
+        bool isWin()
         {
-            if (scrollTime1 > 10)
+            if ((col1[randNum1].BackgroundImage == col2[randNum2].BackgroundImage) || (col2[randNum2].BackgroundImage == col3[randNum3].BackgroundImage))
             {
+                return true;
+            }
+            return false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (scrollTime1 >= 3)
+            {
+                timer1.Stop();
+                if (isWin() && !timer2.Enabled && !timer3.Enabled)
+                {
+
+                    MessageBox.Show("bạn đã chiến thắng");
+                }
                 return;
             }
             movePictureBox(15);
-            await Task.Delay(500);
-            timer2.Start();
+
         }
 
+        decimal totalWin = 0;
+        decimal credit = 0;
+        decimal bet = 0;
+
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
+            scrollTime1 = 0;
+            scrollTime2 = 0;
+            scrollTime3 = 0;
             timer1.Start();
+            timer2.Start();
+            timer3.Start();
         }
-
-        private async void timer2_Tick(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            if (scrollTime2 > 10)
+            if (scrollTime2 >= 3)
             {
+                timer2.Stop();
+                if (isWin() && !timer1.Enabled && !timer3.Enabled)
+                {
+
+                    MessageBox.Show("bạn đã chiến thắng");
+
+                }
                 return;
             }
             movePictureBox1(15);
-            await Task.Delay(500);
-            timer3.Start();
+
         }
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (scrollTime3 > 10)
+            if (scrollTime3 >= 3)
             {
+                timer3.Stop();
+                if (isWin() && !timer1.Enabled && !timer2.Enabled)
+                {
+
+                    MessageBox.Show("bạn đã chiến thắng");
+
+                }
                 return;
             }
             movePictureBox2(15);
+        }
+
+        private void pctb1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

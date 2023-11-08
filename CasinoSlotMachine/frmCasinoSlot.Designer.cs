@@ -34,8 +34,8 @@
             gradientPanel1 = new GradientPanel();
             gradientPanel2 = new GradientPanel();
             btnSpeaker = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnGameMenu = new Button();
+            btnGameRules = new Button();
             gradientLabel1 = new GradientLabel();
             glCredit = new GradientLabel();
             gradientLabel3 = new GradientLabel();
@@ -56,6 +56,7 @@
             pctb7 = new PictureBox();
             pctb9 = new PictureBox();
             cboBet = new ComboBox();
+            btnAutoPlay = new Button();
             gradientPanelSoTienThuong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pctb3).BeginInit();
             panel1.SuspendLayout();
@@ -132,26 +133,29 @@
             btnSpeaker.Size = new Size(59, 53);
             btnSpeaker.TabIndex = 4;
             btnSpeaker.UseVisualStyleBackColor = true;
+            btnSpeaker.Click += btnSpeaker_Click;
             // 
-            // button2
+            // btnGameMenu
             // 
-            button2.Location = new Point(70, 650);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 39);
-            button2.TabIndex = 5;
-            button2.Text = "GAMES MENU";
-            button2.UseVisualStyleBackColor = true;
+            btnGameMenu.Location = new Point(70, 650);
+            btnGameMenu.Margin = new Padding(3, 4, 3, 4);
+            btnGameMenu.Name = "btnGameMenu";
+            btnGameMenu.Size = new Size(104, 39);
+            btnGameMenu.TabIndex = 5;
+            btnGameMenu.Text = "GAMES MENU";
+            btnGameMenu.UseVisualStyleBackColor = true;
+            btnGameMenu.Click += btnGameMenu_Click;
             // 
-            // button3
+            // btnGameRules
             // 
-            button3.Location = new Point(70, 697);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(104, 39);
-            button3.TabIndex = 6;
-            button3.Text = "GAME RULES";
-            button3.UseVisualStyleBackColor = true;
+            btnGameRules.Location = new Point(70, 697);
+            btnGameRules.Margin = new Padding(3, 4, 3, 4);
+            btnGameRules.Name = "btnGameRules";
+            btnGameRules.Size = new Size(104, 39);
+            btnGameRules.TabIndex = 6;
+            btnGameRules.Text = "GAME RULES";
+            btnGameRules.UseVisualStyleBackColor = true;
+            btnGameRules.Click += btnGameRules_Click;
             // 
             // gradientLabel1
             // 
@@ -258,7 +262,7 @@
             btnPlay.TabIndex = 15;
             btnPlay.Text = "Chơi";
             btnPlay.UseVisualStyleBackColor = true;
-            btnPlay.Click += button4_Click;
+            btnPlay.Click += btnPlay_Click;
             // 
             // timer2
             // 
@@ -369,11 +373,24 @@
             cboBet.Size = new Size(171, 48);
             cboBet.TabIndex = 17;
             // 
+            // btnAutoPlay
+            // 
+            btnAutoPlay.BackColor = SystemColors.Control;
+            btnAutoPlay.BackgroundImage = Properties.Resources.game_controller;
+            btnAutoPlay.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAutoPlay.Location = new Point(729, 640);
+            btnAutoPlay.Name = "btnAutoPlay";
+            btnAutoPlay.Size = new Size(35, 29);
+            btnAutoPlay.TabIndex = 18;
+            btnAutoPlay.UseVisualStyleBackColor = false;
+            btnAutoPlay.Click += btnAutoPlay_Click;
+            // 
             // frmCasinoSlot
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(914, 741);
+            Controls.Add(btnAutoPlay);
             Controls.Add(cboBet);
             Controls.Add(panel3);
             Controls.Add(panel2);
@@ -382,15 +399,19 @@
             Controls.Add(gradientLabel3);
             Controls.Add(glCredit);
             Controls.Add(gradientLabel1);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnGameRules);
+            Controls.Add(btnGameMenu);
             Controls.Add(btnSpeaker);
             Controls.Add(gradientPanel2);
             Controls.Add(gradientPanel1);
             Controls.Add(gradientPanelSoTienThuong);
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmCasinoSlot";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCasinoSlot";
+            FormClosing += frmCasinoSlot_FormClosing;
             Load += frmCasinoSlot_Load;
             gradientPanelSoTienThuong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pctb3).EndInit();
@@ -416,8 +437,8 @@
         private GradientPanel gradientPanel1;
         private GradientPanel gradientPanel2;
         private Button btnSpeaker;
-        private Button button2;
-        private Button button3;
+        private Button btnGameMenu;
+        private Button btnGameRules;
         private GradientLabel gradientLabel1;
         private GradientLabel glCredit;
         private GradientLabel gradientLabel3;
@@ -438,5 +459,6 @@
         private PictureBox pctb7;
         private PictureBox pctb9;
         private ComboBox cboBet;
+        private Button btnAutoPlay;
     }
 }

@@ -48,19 +48,28 @@ namespace CasinoSlotMachine
             }
         }
 
+        private bool isExiting = false;
+
         private void frmCasinoSlot_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.No)
+            if (!isExiting)
             {
-                e.Cancel = true;
+                DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r != DialogResult.No)
+                {
+                    isExiting = true;
+                    Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
+                }
+                else
+                {
+                    e.Cancel = true; // Ngăn form đóng nếu người dùng chọn "No"
+                }
             }
-            
         }
 
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
-            FormClosing += frmCasinoSlot_FormClosing;
+
             loadTien();
         }
 
@@ -336,7 +345,7 @@ namespace CasinoSlotMachine
 
 
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnPlay_Click(object sender, EventArgs e)
         {
             if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
@@ -410,6 +419,48 @@ namespace CasinoSlotMachine
         private void glSoTienThuong_TextChanged(object sender, EventArgs e)
         {
             glSoTienThuong.Left = (this.ClientSize.Width - glSoTienThuong.Width) / 2;
+        }
+
+        bool isCancel = false;
+
+        private async void btnAutoPlay_Click(object sender, EventArgs e)
+        {
+            if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+            {
+                btnAutoPlay.BackColor = Color.Yellow;
+                btnPlay.Enabled = false;
+                while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+                {
+                    if (isCancel)
+                    {
+                        break;
+                    }
+                    btnPlay_Click(sender, e);
+                    await Task.Delay(8500);
+                }
+            }
+            else
+            {
+                btnAutoPlay.BackColor = SystemColors.Control;
+                btnAutoPlay.UseVisualStyleBackColor = true;
+                isCancel = true;
+            }
+        }
+
+        private void btnGameMenu_Click(object sender, EventArgs e)
+        {
+            frmMenuScreen menu = new frmMenuScreen();
+            FormClosing -= frmCasinoSlot_FormClosing;
+            this.Close();
+            menu.Show();
+        }
+
+        private void btnSpeaker_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnGameRules_Click(object sender, EventArgs e)
+        {
         }
     }
 }

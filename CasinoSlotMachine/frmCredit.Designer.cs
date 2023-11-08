@@ -128,6 +128,7 @@
             Controls.Add(glMinhTam);
             Controls.Add(glDuy);
             Name = "frmCredit";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCredit";
             ResumeLayout(false);
             PerformLayout();

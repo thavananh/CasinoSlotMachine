@@ -18,20 +18,30 @@ namespace CasinoSlotMachine
             FormClosing += frmMenuScreen_FormClosing;
         }
 
+        private bool isExiting = false;
+
         private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (r == DialogResult.No)
+            if (!isExiting)
             {
-                e.Cancel = true;
+                DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r != DialogResult.No)
+                {
+                    isExiting = true;
+                    Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
+                }
+                else
+                {
+                    e.Cancel = true; // Ngăn form đóng nếu người dùng chọn "No"
+                }
             }
         }
 
         private void glPlay_Click(object sender, EventArgs e)
         {
-            
+
             FormClosing -= frmMenuScreen_FormClosing;
-            this.Hide();
+            this.Close();
             frmCasinoSlot casinoSlot = new frmCasinoSlot();
             casinoSlot.Show();
         }
@@ -43,7 +53,7 @@ namespace CasinoSlotMachine
 
         private void glCredit_Click(object sender, EventArgs e)
         {
-            frmCredit credit = new frmCredit(); 
+            frmCredit credit = new frmCredit();
             credit.Show();
             this.Hide();
         }

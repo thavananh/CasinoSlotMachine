@@ -134,6 +134,7 @@
             Controls.Add(glPlay);
             Controls.Add(glTitle);
             Name = "frmMenuScreen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuScreen";
             ResumeLayout(false);
             PerformLayout();

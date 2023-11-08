@@ -28,89 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            gradientLabel1 = new GradientLabel();
-            gradientLabel2 = new GradientLabel();
-            gradientLabel3 = new GradientLabel();
-            gradientLabel4 = new GradientLabel();
-            gradientLabel5 = new GradientLabel();
+            glDuy = new GradientLabel();
+            glMinhTam = new GradientLabel();
+            glDaiTam = new GradientLabel();
+            glThich = new GradientLabel();
+            glNguyen = new GradientLabel();
             SuspendLayout();
             // 
-            // gradientLabel1
+            // glDuy
             // 
-            gradientLabel1.BackgroundColorBottom = Color.Empty;
-            gradientLabel1.BackgroundColorTop = Color.Empty;
-            gradientLabel1.BackgroundGradientAngel = 0F;
-            gradientLabel1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel1.Location = new Point(24, 9);
-            gradientLabel1.Name = "gradientLabel1";
-            gradientLabel1.Size = new Size(537, 53);
-            gradientLabel1.TabIndex = 6;
-            gradientLabel1.Text = "Nguyễn Võ Minh Duy - 48.01.104.035";
-            gradientLabel1.TextColorBottom = Color.Yellow;
-            gradientLabel1.TextColorTop = Color.Aqua;
-            gradientLabel1.TextGradientAngel = 0F;
-            gradientLabel1.Click += gradientLabel1_Click;
+            glDuy.BackgroundColorBottom = Color.Empty;
+            glDuy.BackgroundColorTop = Color.Empty;
+            glDuy.BackgroundGradientAngel = 0F;
+            glDuy.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            glDuy.Location = new Point(24, 9);
+            glDuy.Name = "glDuy";
+            glDuy.Size = new Size(537, 53);
+            glDuy.TabIndex = 6;
+            glDuy.Text = "Nguyễn Võ Minh Duy - 48.01.104.035";
+            glDuy.TextColorBottom = Color.Yellow;
+            glDuy.TextColorTop = Color.Aqua;
+            glDuy.TextGradientAngel = 0F;
+            glDuy.Click += glDuy_Click;
             // 
-            // gradientLabel2
+            // glMinhTam
             // 
-            gradientLabel2.AutoSize = true;
-            gradientLabel2.BackgroundColorBottom = Color.Empty;
-            gradientLabel2.BackgroundColorTop = Color.Empty;
-            gradientLabel2.BackgroundGradientAngel = 0F;
-            gradientLabel2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel2.Location = new Point(387, 99);
-            gradientLabel2.Name = "gradientLabel2";
-            gradientLabel2.Size = new Size(433, 40);
-            gradientLabel2.TabIndex = 7;
-            gradientLabel2.Text = "Lầu Minh Tâm - 48.01.104.118";
-            gradientLabel2.TextColorBottom = Color.Yellow;
-            gradientLabel2.TextColorTop = Color.Aqua;
-            gradientLabel2.TextGradientAngel = 0F;
+            glMinhTam.AutoSize = true;
+            glMinhTam.BackgroundColorBottom = Color.Empty;
+            glMinhTam.BackgroundColorTop = Color.Empty;
+            glMinhTam.BackgroundGradientAngel = 0F;
+            glMinhTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            glMinhTam.Location = new Point(387, 99);
+            glMinhTam.Name = "glMinhTam";
+            glMinhTam.Size = new Size(433, 40);
+            glMinhTam.TabIndex = 7;
+            glMinhTam.Text = "Lầu Minh Tâm - 48.01.104.118";
+            glMinhTam.TextColorBottom = Color.Yellow;
+            glMinhTam.TextColorTop = Color.Aqua;
+            glMinhTam.TextGradientAngel = 0F;
+            glMinhTam.Click += glMinhTam_Click;
             // 
-            // gradientLabel3
+            // glDaiTam
             // 
-            gradientLabel3.BackgroundColorBottom = Color.Empty;
-            gradientLabel3.BackgroundColorTop = Color.Empty;
-            gradientLabel3.BackgroundGradientAngel = 0F;
-            gradientLabel3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel3.Location = new Point(318, 256);
-            gradientLabel3.Name = "gradientLabel3";
-            gradientLabel3.Size = new Size(502, 40);
-            gradientLabel3.TabIndex = 11;
-            gradientLabel3.Text = "Liên Quốc Đại Tâm - 48.01.104.119";
-            gradientLabel3.TextColorBottom = Color.Yellow;
-            gradientLabel3.TextColorTop = Color.Aqua;
-            gradientLabel3.TextGradientAngel = 0F;
+            glDaiTam.BackgroundColorBottom = Color.Empty;
+            glDaiTam.BackgroundColorTop = Color.Empty;
+            glDaiTam.BackgroundGradientAngel = 0F;
+            glDaiTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            glDaiTam.Location = new Point(318, 256);
+            glDaiTam.Name = "glDaiTam";
+            glDaiTam.Size = new Size(502, 40);
+            glDaiTam.TabIndex = 11;
+            glDaiTam.Text = "Liên Quốc Đại Tâm - 48.01.104.119";
+            glDaiTam.TextColorBottom = Color.Yellow;
+            glDaiTam.TextColorTop = Color.Aqua;
+            glDaiTam.TextGradientAngel = 0F;
+            glDaiTam.Click += glDaiTam_Click;
             // 
-            // gradientLabel4
+            // glThich
             // 
-            gradientLabel4.BackgroundColorBottom = Color.Empty;
-            gradientLabel4.BackgroundColorTop = Color.Empty;
-            gradientLabel4.BackgroundGradientAngel = 0F;
-            gradientLabel4.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel4.Location = new Point(24, 177);
-            gradientLabel4.Name = "gradientLabel4";
-            gradientLabel4.Size = new Size(468, 53);
-            gradientLabel4.TabIndex = 10;
-            gradientLabel4.Text = "Văn Thành Thích - 48.01.104.127";
-            gradientLabel4.TextColorBottom = Color.Yellow;
-            gradientLabel4.TextColorTop = Color.Aqua;
-            gradientLabel4.TextGradientAngel = 0F;
+            glThich.BackgroundColorBottom = Color.Empty;
+            glThich.BackgroundColorTop = Color.Empty;
+            glThich.BackgroundGradientAngel = 0F;
+            glThich.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            glThich.Location = new Point(24, 173);
+            glThich.Name = "glThich";
+            glThich.Size = new Size(468, 53);
+            glThich.TabIndex = 10;
+            glThich.Text = "Văn Thành Thích - 48.01.104.127";
+            glThich.TextColorBottom = Color.Yellow;
+            glThich.TextColorTop = Color.Aqua;
+            glThich.TextGradientAngel = 0F;
+            glThich.Click += glThich_Click;
             // 
-            // gradientLabel5
+            // glNguyen
             // 
-            gradientLabel5.BackgroundColorBottom = Color.Empty;
-            gradientLabel5.BackgroundColorTop = Color.Empty;
-            gradientLabel5.BackgroundGradientAngel = 0F;
-            gradientLabel5.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel5.Location = new Point(24, 322);
-            gradientLabel5.Name = "gradientLabel5";
-            gradientLabel5.Size = new Size(549, 53);
-            gradientLabel5.TabIndex = 12;
-            gradientLabel5.Text = "Nguyễn Phúc Nguyên - 48.01.104.098";
-            gradientLabel5.TextColorBottom = Color.Yellow;
-            gradientLabel5.TextColorTop = Color.Aqua;
-            gradientLabel5.TextGradientAngel = 0F;
+            glNguyen.BackgroundColorBottom = Color.Empty;
+            glNguyen.BackgroundColorTop = Color.Empty;
+            glNguyen.BackgroundGradientAngel = 0F;
+            glNguyen.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            glNguyen.Location = new Point(24, 322);
+            glNguyen.Name = "glNguyen";
+            glNguyen.Size = new Size(549, 53);
+            glNguyen.TabIndex = 12;
+            glNguyen.Text = "Nguyễn Phúc Nguyên - 48.01.104.098";
+            glNguyen.TextColorBottom = Color.Yellow;
+            glNguyen.TextColorTop = Color.Aqua;
+            glNguyen.TextGradientAngel = 0F;
+            glNguyen.Click += glNguyen_Click;
             // 
             // frmCredit
             // 
@@ -118,11 +122,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(832, 412);
-            Controls.Add(gradientLabel5);
-            Controls.Add(gradientLabel3);
-            Controls.Add(gradientLabel4);
-            Controls.Add(gradientLabel2);
-            Controls.Add(gradientLabel1);
+            Controls.Add(glNguyen);
+            Controls.Add(glDaiTam);
+            Controls.Add(glThich);
+            Controls.Add(glMinhTam);
+            Controls.Add(glDuy);
             Name = "frmCredit";
             Text = "frmCredit";
             ResumeLayout(false);
@@ -130,10 +134,10 @@
         }
 
         #endregion
-        private GradientLabel gradientLabel1;
-        private GradientLabel gradientLabel2;
-        private GradientLabel gradientLabel3;
-        private GradientLabel gradientLabel4;
-        private GradientLabel gradientLabel5;
+        private GradientLabel glDuy;
+        private GradientLabel glMinhTam;
+        private GradientLabel glDaiTam;
+        private GradientLabel glThich;
+        private GradientLabel glNguyen;
     }
 }

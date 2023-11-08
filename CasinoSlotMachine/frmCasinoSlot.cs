@@ -47,8 +47,20 @@ namespace CasinoSlotMachine
                 this.Asset = asset;
             }
         }
+
+        private void frmCasinoSlot_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            
+        }
+
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
+            FormClosing += frmCasinoSlot_FormClosing;
             loadTien();
         }
 

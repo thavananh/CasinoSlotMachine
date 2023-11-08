@@ -15,13 +15,25 @@ namespace CasinoSlotMachine
         public frmMenuScreen()
         {
             InitializeComponent();
+            FormClosing += frmMenuScreen_FormClosing;
+        }
+
+        private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void glPlay_Click(object sender, EventArgs e)
         {
+            
+            FormClosing -= frmMenuScreen_FormClosing;
+            this.Hide();
             frmCasinoSlot casinoSlot = new frmCasinoSlot();
             casinoSlot.Show();
-            this.Hide();
         }
 
         private void glHelp_Click(object sender, EventArgs e)
@@ -31,11 +43,14 @@ namespace CasinoSlotMachine
 
         private void glCredit_Click(object sender, EventArgs e)
         {
-
+            frmCredit credit = new frmCredit(); 
+            credit.Show();
+            this.Hide();
         }
 
         private void glQuit_Click(object sender, EventArgs e)
         {
+            Close();
         }
     }
 }

@@ -15,12 +15,13 @@ namespace CasinoSlotMachine
         public frmMenuScreen()
         {
             InitializeComponent();
-            FormClosing += frmMenuScreen_FormClosing;
+            
         }
 
-        private bool isExiting = false;
+        bool isExiting = false;
 
-        private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e)
+        // xuất messagebox và có lựa chọn yes no
+        private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e) 
         {
             if (!isExiting)
             {
@@ -37,6 +38,7 @@ namespace CasinoSlotMachine
             }
         }
 
+        // sự kiện click của label = "Play Now"
         private void glPlay_Click(object sender, EventArgs e)
         {
 
@@ -46,20 +48,23 @@ namespace CasinoSlotMachine
             casinoSlot.Show();
         }
 
+
+        // sự kiên click của label = "HELP"
         private void glHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("2 cột liên tiếp có hình giống nhau sẽ chiến thắng với số tiền thưởng = số cược * 1.1 và 3 cột có hình giống nhau liên tiếp sẽ chiến thắng với số tiền thưởng = số cược * 1.25", "Hướng dẫn", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // sự kiện click của label = "CREDIT"
         private void glCredit_Click(object sender, EventArgs e)
         {
-            frmCredit credit = new frmCredit();
-            
-            FormClosing -= frmMenuScreen_FormClosing;
+            frmCredit credit = new frmCredit(); // Tạo một instance của frmCredit
+            FormClosing -= frmMenuScreen_FormClosing; // Loại bỏ messagebox để khi chuyển đổi ứng dụng, tắt form menu screen không bị nhảy thông báo lên
             this.Close();
-            credit.Show();
+            credit.Show(); // gọi form credit
         }
 
+        // sự kiện click của label = "QUIT"
         private void glQuit_Click(object sender, EventArgs e)
         {
             Close();

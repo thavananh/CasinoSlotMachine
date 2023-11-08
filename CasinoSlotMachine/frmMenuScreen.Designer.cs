@@ -128,6 +128,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(531, 335);
+            FormClosing += frmMenuScreen_FormClosing;
             Controls.Add(glQuit);
             Controls.Add(glCredit);
             Controls.Add(glHelp);

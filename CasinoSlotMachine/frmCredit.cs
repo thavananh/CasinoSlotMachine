@@ -21,6 +21,7 @@ namespace CasinoSlotMachine
 
         bool isExiting = false;
 
+        // xuất messagebox và có lựa chọn yes no
         private void frmCredit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isExiting)
@@ -48,10 +49,11 @@ namespace CasinoSlotMachine
 
         private void glMinhTam_Click(object sender, EventArgs e)
         {
+            // tìm trình duyệt chrome
             var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
             string urlFacebook = @"https://www.facebook.com/minhtam.lau";
-            process.Arguments = urlFacebook;
-            System.Diagnostics.Process.Start(process);
+            process.Arguments = urlFacebook; // chỉ đường dẫn web vào chrome
+            System.Diagnostics.Process.Start(process); // chạy toàn bộ process trên
         }
 
         private void glThich_Click(object sender, EventArgs e)
@@ -80,10 +82,10 @@ namespace CasinoSlotMachine
 
         private void btnGameMenu_Click(object sender, EventArgs e)
         {
-            frmMenuScreen menu = new frmMenuScreen();
-            FormClosing -= frmCredit_FormClosing;
+            frmMenuScreen menu = new frmMenuScreen(); // tạo một instance của frmMenuScreen
+            FormClosing -= frmCredit_FormClosing; // Loại bỏ messagebox để khi chuyển đổi ứng dụng, tắt form credit không bị nhảy thông báo lên
             this.Close();
-            menu.Show();
+            menu.Show(); // gọi form menu
         }
     }
 }

@@ -21,18 +21,12 @@ namespace CasinoSlotMachine
             InitializeComponent();
         }
 
+        // khởi tạo list (mảng 1 chiều) tương ứng với cột 1, cột 2, cột 3
         List<PictureBox> col1;
         List<PictureBox> col2;
         List<PictureBox> col3;
-        Dictionary<int, ImageTaoLao> assetList;
-
-        static int scrollTime1 = 0;
-        static int scrollTime2 = 0;
-        static int scrollTime3 = 0;
-
-        static Random rand = new Random();
-        static int randNum1, randNum2, randNum3;
-
+        
+        // Tự định nghĩa một kiểu dữ liệu Class chứa thông tin gồm idImage (id ảnh) và asset (ảnh)
         public class ImageTaoLao
         {
             private int idImage;
@@ -48,8 +42,26 @@ namespace CasinoSlotMachine
                 this.Asset = asset;
             }
         }
+        // khởi tạo một dictionary dùng để random ảnh, với mỗi giá trị key (int) sẽ tương ứng với một value (ImageTaoLao)
+        Dictionary<int, ImageTaoLao> assetList;
 
-        private bool isExiting = false;
+        // khởi tạo số lần quay cho mỗi cột
+        static int scrollTime1 = 0;
+        static int scrollTime2 = 0;
+        static int scrollTime3 = 0;
+
+
+        // khởi tạo biến rand
+        static Random rand = new Random();
+
+        // khởi tạo biến chứa các giá trị random tương ứng cho ba cột
+        static int randNum1, randNum2, randNum3;
+
+        // dùng để tránh bị gọi messagebox hai lần
+        bool isExiting = false;
+
+        // khởi tạo SoundPlayer để phát nhạc, thư viện mặc định của c# chỉ có thể phát nhạc có đuổi là .wav
+        SoundPlayer player = new SoundPlayer(Properties.Resources.theme);
 
         private void frmCasinoSlot_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -59,7 +71,6 @@ namespace CasinoSlotMachine
                 if (r != DialogResult.No)
                 {
                     isExiting = true;
-
                     Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
                 }
                 else
@@ -69,19 +80,17 @@ namespace CasinoSlotMachine
             }
         }
 
-        SoundPlayer player = new SoundPlayer(Properties.Resources.theme);
 
-        private void frmCasinoSlot_Load(object sender, EventArgs e)
-        {
-            loadTien();
-            player.PlayLooping();
-        }
-
+        // là tiền thưởng khi chưa chơi
         decimal totalWin = 0;
-        decimal credit = 50000;
+        
+        // mặc đinh player có 1000 đô
+        decimal credit = 1000;
 
         void loadTien()
         {
+            // gán cho Text cho label với string có định dạng currency theo kiểu mỹ en-US
+            // add cho comboBox các mức bet
             glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
             cboBet.Items.Add(10.ToString("C", new CultureInfo("en-us")));
             cboBet.Items.Add(20.ToString("C", new CultureInfo("en-us")));
@@ -89,12 +98,21 @@ namespace CasinoSlotMachine
             cboBet.Items.Add(100.ToString("C", new CultureInfo("en-us")));
             cboBet.Items.Add(200.ToString("C", new CultureInfo("en-us")));
             cboBet.Items.Add(500.ToString("C", new CultureInfo("en-us")));
+            // set mức cược mặc định là 10 đô 
             cboBet.SelectedIndex = 0;
+            // gán cho tiền thưởng là 0
             glSoTienThuong.Text = 0.ToString("C", new CultureInfo("en-us"));
+        }
+
+        private void frmCasinoSlot_Load(object sender, EventArgs e)
+        {
+            loadTien();
+            player.PlayLooping();
         }
 
         void loadHinhAnh()
         {
+            // khởi tạo 7 img với id từ 1 đến 7, ảnh có thêm xem trong phần resources
             ImageTaoLao img1 = new ImageTaoLao(1, Properties.Resources._1);
             ImageTaoLao img2 = new ImageTaoLao(2, Properties.Resources._2);
             ImageTaoLao img3 = new ImageTaoLao(3, Properties.Resources._3);
@@ -103,19 +121,9 @@ namespace CasinoSlotMachine
             ImageTaoLao img6 = new ImageTaoLao(6, Properties.Resources._6);
             ImageTaoLao img7 = new ImageTaoLao(7, Properties.Resources._7);
 
+            // dùng để random
             assetList = new Dictionary<int, ImageTaoLao>()
             {
-                //{1, Properties.Resources._1},
-                //{2, Properties.Resources._1},
-                //{3, Properties.Resources._2},
-                //{4, Properties.Resources._2},
-                //{5, Properties.Resources._2},
-                //{6, Properties.Resources._3},
-                //{7, Properties.Resources._3},
-                //{8, Properties.Resources._4},
-                //{9, Properties.Resources._5},
-                //{10, Properties.Resources._6},
-                //{11, Properties.Resources._7},
                 {1, img1},
                 {2, img1},
                 {3, img1},
@@ -130,23 +138,9 @@ namespace CasinoSlotMachine
                 {12, img5},
                 {13, img6},
                 {14, img7},
-                //{1, img1},
-                //{2, img1},
-                //{3, img1},
-                //{4, img1},
-                //{5, img1},
-                //{6, img1},
-                //{7, img1},
-                //{8, img1},
-                //{9, img1},
-                //{10, img1},
-                //{11, img1},
-                //{12, img1},
-                //{13, img1},
-                //{14, img1},
             };
 
-
+            // random hình ảnh và gán tag cho các picture box
             int randTaoLao = rand.Next(1, 15);
             pctb1.BackgroundImage = assetList[randTaoLao].Asset;
             pctb1.Tag = assetList[randTaoLao].IdImage;
@@ -174,6 +168,8 @@ namespace CasinoSlotMachine
             randTaoLao = rand.Next(1, 15);
             pctb9.BackgroundImage = assetList[randTaoLao].Asset;
             pctb9.Tag = assetList[randTaoLao].IdImage;
+
+            // khởi tạo list tương ứng với 3 picture box
             col1 = new List<PictureBox>()
             {
                 pctb1,
@@ -197,14 +193,14 @@ namespace CasinoSlotMachine
 
 
 
-
+        // dùng để di chuyển các hình ảnh
         void movePictureBox(int speed)
         {
             randNum1 = rand.Next(0, 3);
             if (pctb1.Top > panel1.Height)
             {
 
-                pctb1.Top = -panel1.Height / 2;
+                pctb1.Top = -panel1.Height / 2; // tạo hiệu ứng
             }
             else
             {
@@ -219,7 +215,7 @@ namespace CasinoSlotMachine
             {
                 pctb2.Top += speed;
             }
-            if (col1[randNum1].Location.Y == 122)
+            if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
             {
                 scrollTime1++;
             }
@@ -306,6 +302,7 @@ namespace CasinoSlotMachine
 
         }
 
+        // điều kiện win là 1 hàng có 2 cột liên tiếp cùng chạy
         int isWin()
         {
             if ((col1[randNum1].Tag.ToString() == col2[randNum2].Tag.ToString()) && (col2[randNum2].Tag.ToString() == col3[randNum3].Tag.ToString()))
@@ -319,6 +316,7 @@ namespace CasinoSlotMachine
             return 0;
         }
 
+        // đã set thuộc tính timer có interval là 1ms nghĩa là cứ 1 mili giây thì hàm timer_tick này sẽ được gọi 1 lần
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (scrollTime1 >= 3)
@@ -348,12 +346,10 @@ namespace CasinoSlotMachine
         }
 
 
-
-
-
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+            // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
+            if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
                 glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));

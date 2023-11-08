@@ -15,13 +15,13 @@ namespace CasinoSlotMachine
         public frmMenuScreen()
         {
             InitializeComponent();
-            
+
         }
 
         bool isExiting = false;
 
         // xuất messagebox và có lựa chọn yes no
-        private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e) 
+        private void frmMenuScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isExiting)
             {

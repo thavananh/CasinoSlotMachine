@@ -41,9 +41,9 @@
             glTitle.BackgroundColorTop = Color.Empty;
             glTitle.BackgroundGradientAngel = 0F;
             glTitle.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            glTitle.Location = new Point(88, 22);
+            glTitle.Location = new Point(0, 22);
             glTitle.Name = "glTitle";
-            glTitle.Size = new Size(355, 44);
+            glTitle.Size = new Size(531, 44);
             glTitle.TabIndex = 0;
             glTitle.Text = "Casino Slot Machine";
             glTitle.TextColorBottom = Color.Yellow;
@@ -128,7 +128,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(531, 335);
-            FormClosing += frmMenuScreen_FormClosing;
             Controls.Add(glQuit);
             Controls.Add(glCredit);
             Controls.Add(glHelp);
@@ -137,6 +136,7 @@
             Name = "frmMenuScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuScreen";
+            FormClosing += frmMenuScreen_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

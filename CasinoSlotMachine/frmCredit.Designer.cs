@@ -130,8 +130,7 @@
             // 
             // frmCredit
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(832, 437);
             Controls.Add(btnGameMenu);
@@ -141,9 +140,9 @@
             Controls.Add(glMinhTam);
             Controls.Add(glDuy);
             Name = "frmCredit";
-            FormClosing += frmCredit_FormClosing;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCredit";
+            FormClosing += frmCredit_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

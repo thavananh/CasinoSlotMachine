@@ -139,5 +139,15 @@ namespace CasinoSlotMachine.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap speaker_filled_audio_tool {
+            get {
+                object obj = ResourceManager.GetObject("speaker-filled-audio-tool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@
             gradientPanelSoTienThuong = new GradientPanel();
             gradientPanel1 = new GradientPanel();
             gradientPanel2 = new GradientPanel();
-            button1 = new Button();
+            btnSpeaker = new Button();
             button2 = new Button();
             button3 = new Button();
             gradientLabel1 = new GradientLabel();
@@ -87,7 +87,6 @@
             glSoTienThuong.TextColorBottom = Color.FromArgb(255, 229, 47);
             glSoTienThuong.TextColorTop = Color.FromArgb(254, 219, 24);
             glSoTienThuong.TextGradientAngel = 90F;
-            
             // 
             // gradientPanelSoTienThuong
             // 
@@ -123,19 +122,20 @@
             gradientPanel2.Size = new Size(11, 477);
             gradientPanel2.TabIndex = 3;
             // 
-            // button1
+            // btnSpeaker
             // 
-            button1.Location = new Point(5, 647);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(41, 89);
-            button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnSpeaker.BackgroundImage = Properties.Resources.speaker_filled_audio_tool;
+            btnSpeaker.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSpeaker.Location = new Point(5, 667);
+            btnSpeaker.Margin = new Padding(3, 4, 3, 4);
+            btnSpeaker.Name = "btnSpeaker";
+            btnSpeaker.Size = new Size(59, 53);
+            btnSpeaker.TabIndex = 4;
+            btnSpeaker.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(50, 651);
+            button2.Location = new Point(70, 650);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(104, 39);
@@ -145,7 +145,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(50, 697);
+            button3.Location = new Point(70, 697);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(104, 39);
@@ -384,7 +384,7 @@
             Controls.Add(gradientLabel1);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnSpeaker);
             Controls.Add(gradientPanel2);
             Controls.Add(gradientPanel1);
             Controls.Add(gradientPanelSoTienThuong);
@@ -415,7 +415,7 @@
         private GradientPanel gradientPanelSoTienThuong;
         private GradientPanel gradientPanel1;
         private GradientPanel gradientPanel2;
-        private Button button1;
+        private Button btnSpeaker;
         private Button button2;
         private Button button3;
         private GradientLabel gradientLabel1;

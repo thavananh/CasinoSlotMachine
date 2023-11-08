@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,25 @@ namespace CasinoSlotMachine
         public frmCredit()
         {
             InitializeComponent();
+        }
+
+        bool isExiting = false;
+
+        private void frmCredit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isExiting)
+            {
+                DialogResult r = MessageBox.Show("Bạn có muốn thoát không ?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r != DialogResult.No)
+                {
+                    isExiting = true;
+                    Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
+                }
+                else
+                {
+                    e.Cancel = true; // Ngăn form đóng nếu người dùng chọn "No"
+                }
+            }
         }
 
         private void glDuy_Click(object sender, EventArgs e)
@@ -56,6 +76,14 @@ namespace CasinoSlotMachine
             string urlFacebook = @"https://www.facebook.com/cubonll";
             process.Arguments = urlFacebook;
             System.Diagnostics.Process.Start(urlFacebook);
+        }
+
+        private void btnGameMenu_Click(object sender, EventArgs e)
+        {
+            frmMenuScreen menu = new frmMenuScreen();
+            FormClosing -= frmCredit_FormClosing;
+            this.Close();
+            menu.Show();
         }
     }
 }

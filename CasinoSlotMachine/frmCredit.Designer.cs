@@ -33,6 +33,7 @@
             glDaiTam = new GradientLabel();
             glThich = new GradientLabel();
             glNguyen = new GradientLabel();
+            btnGameMenu = new Button();
             SuspendLayout();
             // 
             // glDuy
@@ -116,18 +117,31 @@
             glNguyen.TextGradientAngel = 0F;
             glNguyen.Click += glNguyen_Click;
             // 
+            // btnGameMenu
+            // 
+            btnGameMenu.Location = new Point(683, 385);
+            btnGameMenu.Margin = new Padding(3, 4, 3, 4);
+            btnGameMenu.Name = "btnGameMenu";
+            btnGameMenu.Size = new Size(104, 39);
+            btnGameMenu.TabIndex = 13;
+            btnGameMenu.Text = "GAMES MENU";
+            btnGameMenu.UseVisualStyleBackColor = true;
+            btnGameMenu.Click += btnGameMenu_Click;
+            // 
             // frmCredit
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(832, 412);
+            ClientSize = new Size(832, 437);
+            Controls.Add(btnGameMenu);
             Controls.Add(glNguyen);
             Controls.Add(glDaiTam);
             Controls.Add(glThich);
             Controls.Add(glMinhTam);
             Controls.Add(glDuy);
             Name = "frmCredit";
+            FormClosing += frmCredit_FormClosing;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCredit";
             ResumeLayout(false);
@@ -140,5 +154,6 @@
         private GradientLabel glDaiTam;
         private GradientLabel glThich;
         private GradientLabel glNguyen;
+        private Button btnGameMenu;
     }
 }

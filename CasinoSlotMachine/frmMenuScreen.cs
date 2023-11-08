@@ -54,8 +54,10 @@ namespace CasinoSlotMachine
         private void glCredit_Click(object sender, EventArgs e)
         {
             frmCredit credit = new frmCredit();
+            
+            FormClosing -= frmMenuScreen_FormClosing;
+            this.Close();
             credit.Show();
-            this.Hide();
         }
 
         private void glQuit_Click(object sender, EventArgs e)

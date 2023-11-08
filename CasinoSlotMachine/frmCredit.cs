@@ -21,7 +21,7 @@ namespace CasinoSlotMachine
         private void glDuy_Click(object sender, EventArgs e)
         {
             var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/profile.php?id=100015450043466";
+            string urlFacebook = @"https://www.facebook.com/profile.php?id=100015450043466";
             process.Arguments = urlFacebook;
             System.Diagnostics.Process.Start(urlFacebook);
         }
@@ -29,23 +29,31 @@ namespace CasinoSlotMachine
         private void glMinhTam_Click(object sender, EventArgs e)
         {
             var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/minhtam.lau";
+            string urlFacebook = @"https://www.facebook.com/minhtam.lau";
             process.Arguments = urlFacebook;
             System.Diagnostics.Process.Start(process);
         }
 
         private void glThich_Click(object sender, EventArgs e)
         {
+            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+            string urlFacebook = @"https://www.facebook.com/cucshitmauhong";
+            process.Arguments = urlFacebook;
+            System.Diagnostics.Process.Start(urlFacebook);
         }
 
         private void glDaiTam_Click(object sender, EventArgs e)
         {
+            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+            string urlFacebook = @"https://www.facebook.com/lqdai.tom.2003/";
+            process.Arguments = urlFacebook;
+            System.Diagnostics.Process.Start(urlFacebook);
         }
 
         private void glNguyen_Click(object sender, EventArgs e)
         {
             var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/cubonll";
+            string urlFacebook = @"https://www.facebook.com/cubonll";
             process.Arguments = urlFacebook;
             System.Diagnostics.Process.Start(urlFacebook);
         }

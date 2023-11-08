@@ -59,7 +59,7 @@ namespace CasinoSlotMachine
                 if (r != DialogResult.No)
                 {
                     isExiting = true;
-                    
+
                     Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
                 }
                 else
@@ -195,7 +195,7 @@ namespace CasinoSlotMachine
             };
         }
 
-        
+
 
 
         void movePictureBox(int speed)

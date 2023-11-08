@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCasinoSlot));
             glSoTienThuong = new GradientLabel();
             gradientPanelSoTienThuong = new GradientPanel();
             gradientPanel1 = new GradientPanel();
@@ -126,13 +127,13 @@
             // btnSpeaker
             // 
             btnSpeaker.BackgroundImage = Properties.Resources.speaker_filled_audio_tool;
-            btnSpeaker.Tag = "PlayLoop";
             btnSpeaker.BackgroundImageLayout = ImageLayout.Stretch;
             btnSpeaker.Location = new Point(5, 667);
             btnSpeaker.Margin = new Padding(3, 4, 3, 4);
             btnSpeaker.Name = "btnSpeaker";
             btnSpeaker.Size = new Size(59, 53);
             btnSpeaker.TabIndex = 4;
+            btnSpeaker.Tag = "PlayLoop";
             btnSpeaker.UseVisualStyleBackColor = true;
             btnSpeaker.Click += btnSpeaker_Click;
             // 
@@ -406,6 +407,7 @@
             Controls.Add(gradientPanel2);
             Controls.Add(gradientPanel1);
             Controls.Add(gradientPanelSoTienThuong);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;

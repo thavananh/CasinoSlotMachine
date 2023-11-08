@@ -69,7 +69,7 @@ namespace CasinoSlotMachine
             }
         }
 
-        SoundPlayer player = new SoundPlayer(Application.StartupPath + @"\\Resources\\GameMusic\\themes.wav");
+        SoundPlayer player = new SoundPlayer(Properties.Resources.theme);
 
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {

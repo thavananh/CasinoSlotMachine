@@ -457,10 +457,12 @@ namespace CasinoSlotMachine
 
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnGameRules_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

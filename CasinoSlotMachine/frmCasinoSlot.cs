@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Media;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -58,6 +59,7 @@ namespace CasinoSlotMachine
                 if (r != DialogResult.No)
                 {
                     isExiting = true;
+                    
                     Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
                 }
                 else
@@ -67,10 +69,12 @@ namespace CasinoSlotMachine
             }
         }
 
+        SoundPlayer player = new SoundPlayer(Application.StartupPath + @"\\Resources\\GameMusic\\themes.wav");
+
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
-
             loadTien();
+            player.PlayLooping();
         }
 
         decimal totalWin = 0;
@@ -190,6 +194,8 @@ namespace CasinoSlotMachine
                 pctb9
             };
         }
+
+        
 
 
         void movePictureBox(int speed)
@@ -451,18 +457,30 @@ namespace CasinoSlotMachine
         {
             frmMenuScreen menu = new frmMenuScreen();
             FormClosing -= frmCasinoSlot_FormClosing;
+            player.Stop();
             this.Close();
             menu.Show();
         }
 
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
-
+            if (btnSpeaker.Tag.ToString() == "PlayLoop")
+            {
+                btnSpeaker.Tag = "Mute";
+                btnSpeaker.BackgroundImage = Properties.Resources.volume_mute;
+                player.Stop();
+            }
+            else
+            {
+                btnSpeaker.Tag = "PlayLoop";
+                btnSpeaker.BackgroundImage = Properties.Resources.speaker_filled_audio_tool;
+                player.PlayLooping();
+            }
         }
 
         private void btnGameRules_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("2 cột liên tiếp có hình giống nhau sẽ chiến thắng với số tiền thưởng = số cược * 1.1 và 3 cột có hình giống nhau liên tiếp sẽ chiến thắng với số tiền thưởng = số cược * 1.25", "Hướng dẫn", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

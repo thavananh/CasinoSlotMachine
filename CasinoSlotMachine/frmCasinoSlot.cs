@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Media;
+using System.Net.NetworkInformation;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -316,6 +317,31 @@ namespace CasinoSlotMachine
             return 0;
         }
 
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
+            if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+            {
+                credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
+                glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
+                btnPlay.Enabled = false; // không cho người dùng bấm play game khi đã CHẠY RỒI
+                btnGameMenu.Enabled = false;
+                cboBet.Enabled = false;
+                btnAutoPlay.Enabled = false;
+                loadHinhAnh();
+                scrollTime1 = 0;
+                scrollTime2 = 0;
+                scrollTime3 = 0;
+                timer1.Start();
+                timer2.Start();
+                timer3.Start();
+            }
+            else
+            {
+                MessageBox.Show("Dừng lại là thất bại, nạp tiền chơi tiếp đi !!!");
+            }
+        }
+
         // đã set thuộc tính timer có interval là 1ms nghĩa là cứ 1 mili giây thì hàm timer_tick này sẽ được gọi 1 lần
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -347,29 +373,6 @@ namespace CasinoSlotMachine
 
         }
 
-
-        private void btnPlay_Click(object sender, EventArgs e)
-        {
-            // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
-            if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
-            {
-                credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
-                glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
-                btnPlay.Enabled = false; // không cho người dùng bấm play game khi đã CHẠY RỒI
-                btnGameMenu.Enabled = false;
-                loadHinhAnh();
-                scrollTime1 = 0;
-                scrollTime2 = 0;
-                scrollTime3 = 0;
-                timer1.Start();
-                timer2.Start();
-                timer3.Start();
-            }
-            else
-            {
-                MessageBox.Show("Dừng lại là thất bại, nạp tiền chơi tiếp đi !!!");
-            }
-        }
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (scrollTime2 >= 3)
@@ -409,6 +412,7 @@ namespace CasinoSlotMachine
                 {
                     btnPlay.Enabled = true;
                     btnGameMenu.Enabled = true;
+                    cboBet.Enabled = true;
                     if (isWin() == 1)
                     {
                         totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
@@ -429,26 +433,24 @@ namespace CasinoSlotMachine
             movePictureBox2(15);
         }
 
-        private void glSoTienThuong_TextChanged(object sender, EventArgs e)
-        {
-            glSoTienThuong.Left = (this.ClientSize.Width - glSoTienThuong.Width) / 2;
-        }
-
         bool isCancel = false;
 
+        // AutoPlay
         private async void btnAutoPlay_Click(object sender, EventArgs e)
         {
-            if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+            if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 btnAutoPlay.BackColor = Color.Yellow;
                 btnPlay.Enabled = false;
-                while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) > Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
+                cboBet.Enabled = true;
+                while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
                 {
                     if (isCancel)
                     {
                         break;
                     }
                     btnPlay_Click(sender, e);
+                    btnAutoPlay.Enabled = true;
                     await Task.Delay(9000); // trường hợp xấu nhất game có thể chạy
                 }
             }
@@ -461,6 +463,8 @@ namespace CasinoSlotMachine
             }
         }
 
+        
+
         private void btnGameMenu_Click(object sender, EventArgs e)
         {
             frmMenuScreen menu = new frmMenuScreen();
@@ -470,6 +474,8 @@ namespace CasinoSlotMachine
             menu.Show();
         }
 
+
+        // PlayLoop do mình gán tag mặc định
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
             if (btnSpeaker.Tag.ToString() == "PlayLoop")
@@ -486,6 +492,7 @@ namespace CasinoSlotMachine
             }
         }
 
+        // Luật chơi
         private void btnGameRules_Click(object sender, EventArgs e)
         {
             MessageBox.Show("2 cột liên tiếp có hình giống nhau sẽ chiến thắng với số tiền thưởng = số cược * 1.1 và 3 cột có hình giống nhau liên tiếp sẽ chiến thắng với số tiền thưởng = số cược * 1.25", "Hướng dẫn", MessageBoxButtons.OK, MessageBoxIcon.Information);

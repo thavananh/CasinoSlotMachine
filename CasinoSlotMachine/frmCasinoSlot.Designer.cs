@@ -82,9 +82,9 @@
             glSoTienThuong.BackgroundGradientAngel = 0F;
             glSoTienThuong.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point);
             glSoTienThuong.LineAlignment = StringAlignment.Center;
-            glSoTienThuong.Location = new Point(0, 23);
+            glSoTienThuong.Location = new Point(0, 30);
             glSoTienThuong.Name = "glSoTienThuong";
-            glSoTienThuong.Size = new Size(800, 64);
+            glSoTienThuong.Size = new Size(914, 86);
             glSoTienThuong.TabIndex = 0;
             glSoTienThuong.Text = "320.000.000";
             glSoTienThuong.TextAlign = ContentAlignment.MiddleCenter;
@@ -99,8 +99,9 @@
             gradientPanelSoTienThuong.Controls.Add(glSoTienThuong);
             gradientPanelSoTienThuong.GradientAngle = 45F;
             gradientPanelSoTienThuong.Location = new Point(0, 0);
+            gradientPanelSoTienThuong.Margin = new Padding(3, 4, 3, 4);
             gradientPanelSoTienThuong.Name = "gradientPanelSoTienThuong";
-            gradientPanelSoTienThuong.Size = new Size(800, 112);
+            gradientPanelSoTienThuong.Size = new Size(914, 150);
             gradientPanelSoTienThuong.TabIndex = 1;
             // 
             // gradientPanel1
@@ -108,9 +109,10 @@
             gradientPanel1.ColorBottom = Color.FromArgb(204, 157, 59);
             gradientPanel1.ColorTop = Color.FromArgb(255, 192, 128);
             gradientPanel1.GradientAngle = 90F;
-            gradientPanel1.Location = new Point(264, 118);
+            gradientPanel1.Location = new Point(302, 158);
+            gradientPanel1.Margin = new Padding(3, 4, 3, 4);
             gradientPanel1.Name = "gradientPanel1";
-            gradientPanel1.Size = new Size(10, 358);
+            gradientPanel1.Size = new Size(11, 478);
             gradientPanel1.TabIndex = 2;
             // 
             // gradientPanel2
@@ -118,18 +120,20 @@
             gradientPanel2.ColorBottom = Color.FromArgb(204, 157, 59);
             gradientPanel2.ColorTop = Color.FromArgb(255, 192, 128);
             gradientPanel2.GradientAngle = 90F;
-            gradientPanel2.Location = new Point(533, 118);
+            gradientPanel2.Location = new Point(609, 158);
+            gradientPanel2.Margin = new Padding(3, 4, 3, 4);
             gradientPanel2.Name = "gradientPanel2";
-            gradientPanel2.Size = new Size(10, 358);
+            gradientPanel2.Size = new Size(11, 478);
             gradientPanel2.TabIndex = 3;
             // 
             // btnSpeaker
             // 
             btnSpeaker.BackgroundImage = Properties.Resources.speaker_filled_audio_tool;
             btnSpeaker.BackgroundImageLayout = ImageLayout.Stretch;
-            btnSpeaker.Location = new Point(4, 501);
+            btnSpeaker.Location = new Point(5, 668);
+            btnSpeaker.Margin = new Padding(3, 4, 3, 4);
             btnSpeaker.Name = "btnSpeaker";
-            btnSpeaker.Size = new Size(51, 51);
+            btnSpeaker.Size = new Size(58, 68);
             btnSpeaker.TabIndex = 4;
             btnSpeaker.Tag = "PlayLoop";
             btnSpeaker.UseVisualStyleBackColor = true;
@@ -137,9 +141,10 @@
             // 
             // btnGameMenu
             // 
-            btnGameMenu.Location = new Point(61, 493);
+            btnGameMenu.Location = new Point(70, 658);
+            btnGameMenu.Margin = new Padding(3, 4, 3, 4);
             btnGameMenu.Name = "btnGameMenu";
-            btnGameMenu.Size = new Size(99, 29);
+            btnGameMenu.Size = new Size(113, 38);
             btnGameMenu.TabIndex = 5;
             btnGameMenu.Text = "GAMES MENU";
             btnGameMenu.UseVisualStyleBackColor = true;
@@ -147,9 +152,10 @@
             // 
             // btnGameRules
             // 
-            btnGameRules.Location = new Point(61, 528);
+            btnGameRules.Location = new Point(70, 704);
+            btnGameRules.Margin = new Padding(3, 4, 3, 4);
             btnGameRules.Name = "btnGameRules";
-            btnGameRules.Size = new Size(99, 29);
+            btnGameRules.Size = new Size(113, 38);
             btnGameRules.TabIndex = 6;
             btnGameRules.Text = "GAME RULES";
             btnGameRules.UseVisualStyleBackColor = true;
@@ -164,9 +170,9 @@
             glCredit.BackgroundGradientAngel = 0F;
             glCredit.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glCredit.LineAlignment = StringAlignment.Center;
-            glCredit.Location = new Point(314, 513);
+            glCredit.Location = new Point(359, 684);
             glCredit.Name = "glCredit";
-            glCredit.Size = new Size(186, 40);
+            glCredit.Size = new Size(231, 50);
             glCredit.TabIndex = 8;
             glCredit.Text = "000.000.000";
             glCredit.TextColorBottom = Color.White;
@@ -178,10 +184,10 @@
             pctb3.BackColor = Color.Transparent;
             pctb3.BackgroundImage = Properties.Resources._2;
             pctb3.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb3.Location = new Point(0, 274);
+            pctb3.Location = new Point(0, 366);
             pctb3.Margin = new Padding(3, 2, 3, 2);
             pctb3.Name = "pctb3";
-            pctb3.Size = new Size(255, 164);
+            pctb3.Size = new Size(291, 218);
             pctb3.TabIndex = 13;
             pctb3.TabStop = false;
             // 
@@ -196,10 +202,10 @@
             panel1.Controls.Add(pctb2);
             panel1.Controls.Add(pctb1);
             panel1.Controls.Add(pctb3);
-            panel1.Location = new Point(4, 118);
+            panel1.Location = new Point(5, 158);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(255, 358);
+            panel1.Size = new Size(291, 477);
             panel1.TabIndex = 14;
             // 
             // pctb2
@@ -207,10 +213,10 @@
             pctb2.BackColor = Color.Transparent;
             pctb2.BackgroundImage = Properties.Resources._2;
             pctb2.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb2.Location = new Point(0, 89);
+            pctb2.Location = new Point(0, 118);
             pctb2.Margin = new Padding(3, 2, 3, 2);
             pctb2.Name = "pctb2";
-            pctb2.Size = new Size(255, 164);
+            pctb2.Size = new Size(291, 218);
             pctb2.TabIndex = 15;
             pctb2.TabStop = false;
             // 
@@ -219,19 +225,19 @@
             pctb1.BackColor = Color.Transparent;
             pctb1.BackgroundImage = Properties.Resources._1;
             pctb1.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb1.Location = new Point(0, -89);
+            pctb1.Location = new Point(0, -118);
             pctb1.Margin = new Padding(3, 2, 3, 2);
             pctb1.Name = "pctb1";
-            pctb1.Size = new Size(255, 164);
+            pctb1.Size = new Size(291, 218);
             pctb1.TabIndex = 14;
             pctb1.TabStop = false;
             // 
             // btnPlay
             // 
-            btnPlay.Location = new Point(674, 480);
+            btnPlay.Location = new Point(770, 640);
             btnPlay.Margin = new Padding(3, 2, 3, 2);
             btnPlay.Name = "btnPlay";
-            btnPlay.Size = new Size(82, 22);
+            btnPlay.Size = new Size(94, 30);
             btnPlay.TabIndex = 15;
             btnPlay.Text = "Chơi";
             btnPlay.UseVisualStyleBackColor = true;
@@ -252,10 +258,10 @@
             pctb6.BackColor = Color.Transparent;
             pctb6.BackgroundImage = Properties.Resources._2;
             pctb6.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb6.Location = new Point(0, 274);
+            pctb6.Location = new Point(0, 366);
             pctb6.Margin = new Padding(3, 2, 3, 2);
             pctb6.Name = "pctb6";
-            pctb6.Size = new Size(255, 164);
+            pctb6.Size = new Size(291, 218);
             pctb6.TabIndex = 13;
             pctb6.TabStop = false;
             // 
@@ -264,10 +270,10 @@
             pctb4.BackColor = Color.Transparent;
             pctb4.BackgroundImage = Properties.Resources._1;
             pctb4.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb4.Location = new Point(0, -89);
+            pctb4.Location = new Point(0, -118);
             pctb4.Margin = new Padding(3, 2, 3, 2);
             pctb4.Name = "pctb4";
-            pctb4.Size = new Size(255, 164);
+            pctb4.Size = new Size(291, 218);
             pctb4.TabIndex = 14;
             pctb4.TabStop = false;
             // 
@@ -276,10 +282,10 @@
             pctb5.BackColor = Color.Transparent;
             pctb5.BackgroundImage = Properties.Resources._2;
             pctb5.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb5.Location = new Point(0, 89);
+            pctb5.Location = new Point(0, 118);
             pctb5.Margin = new Padding(3, 2, 3, 2);
             pctb5.Name = "pctb5";
-            pctb5.Size = new Size(255, 164);
+            pctb5.Size = new Size(291, 218);
             pctb5.TabIndex = 15;
             pctb5.TabStop = false;
             // 
@@ -289,10 +295,10 @@
             panel2.Controls.Add(pctb5);
             panel2.Controls.Add(pctb4);
             panel2.Controls.Add(pctb6);
-            panel2.Location = new Point(279, 118);
+            panel2.Location = new Point(319, 158);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(255, 358);
+            panel2.Size = new Size(291, 477);
             panel2.TabIndex = 15;
             // 
             // panel3
@@ -301,10 +307,10 @@
             panel3.Controls.Add(pctb8);
             panel3.Controls.Add(pctb7);
             panel3.Controls.Add(pctb9);
-            panel3.Location = new Point(545, 118);
+            panel3.Location = new Point(623, 158);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(255, 358);
+            panel3.Size = new Size(291, 477);
             panel3.TabIndex = 16;
             // 
             // pctb8
@@ -312,10 +318,10 @@
             pctb8.BackColor = Color.Transparent;
             pctb8.BackgroundImage = Properties.Resources._2;
             pctb8.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb8.Location = new Point(0, 89);
+            pctb8.Location = new Point(0, 118);
             pctb8.Margin = new Padding(3, 2, 3, 2);
             pctb8.Name = "pctb8";
-            pctb8.Size = new Size(255, 164);
+            pctb8.Size = new Size(291, 218);
             pctb8.TabIndex = 15;
             pctb8.TabStop = false;
             // 
@@ -324,10 +330,10 @@
             pctb7.BackColor = Color.Transparent;
             pctb7.BackgroundImage = Properties.Resources._1;
             pctb7.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb7.Location = new Point(0, -89);
+            pctb7.Location = new Point(0, -118);
             pctb7.Margin = new Padding(3, 2, 3, 2);
             pctb7.Name = "pctb7";
-            pctb7.Size = new Size(255, 164);
+            pctb7.Size = new Size(291, 218);
             pctb7.TabIndex = 14;
             pctb7.TabStop = false;
             // 
@@ -336,10 +342,10 @@
             pctb9.BackColor = Color.Transparent;
             pctb9.BackgroundImage = Properties.Resources._2;
             pctb9.BackgroundImageLayout = ImageLayout.Stretch;
-            pctb9.Location = new Point(0, 274);
+            pctb9.Location = new Point(0, 366);
             pctb9.Margin = new Padding(3, 2, 3, 2);
             pctb9.Name = "pctb9";
-            pctb9.Size = new Size(255, 164);
+            pctb9.Size = new Size(291, 218);
             pctb9.TabIndex = 13;
             pctb9.TabStop = false;
             // 
@@ -349,10 +355,10 @@
             cboBet.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             cboBet.ForeColor = Color.White;
             cboBet.FormattingEnabled = true;
-            cboBet.Location = new Point(625, 510);
+            cboBet.Location = new Point(714, 680);
             cboBet.Margin = new Padding(3, 2, 3, 2);
             cboBet.Name = "cboBet";
-            cboBet.Size = new Size(150, 48);
+            cboBet.Size = new Size(171, 56);
             cboBet.TabIndex = 17;
             // 
             // btnAutoPlay
@@ -361,10 +367,10 @@
             btnAutoPlay.BackColor = SystemColors.Control;
             btnAutoPlay.BackgroundImage = Properties.Resources.game_controller;
             btnAutoPlay.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAutoPlay.Location = new Point(640, 478);
+            btnAutoPlay.Location = new Point(731, 638);
             btnAutoPlay.Margin = new Padding(3, 2, 3, 2);
             btnAutoPlay.Name = "btnAutoPlay";
-            btnAutoPlay.Size = new Size(30, 30);
+            btnAutoPlay.Size = new Size(34, 40);
             btnAutoPlay.TabIndex = 18;
             btnAutoPlay.UseVisualStyleBackColor = false;
             btnAutoPlay.Click += btnAutoPlay_Click;
@@ -375,9 +381,9 @@
             label1.BackColor = Color.Blue;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.Yellow;
-            label1.Location = new Point(193, 513);
+            label1.Location = new Point(221, 684);
             label1.Name = "label1";
-            label1.Size = new Size(116, 40);
+            label1.Size = new Size(150, 50);
             label1.TabIndex = 19;
             label1.Text = "CREDIT";
             // 
@@ -387,18 +393,18 @@
             label2.BackColor = Color.Blue;
             label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.Yellow;
-            label2.Location = new Point(523, 513);
+            label2.Location = new Point(598, 684);
             label2.Name = "label2";
-            label2.Size = new Size(68, 40);
+            label2.Size = new Size(88, 50);
             label2.TabIndex = 20;
             label2.Text = "BET";
             // 
             // frmCasinoSlot
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(800, 563);
+            ClientSize = new Size(914, 750);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnAutoPlay);
@@ -415,6 +421,7 @@
             Controls.Add(gradientPanel1);
             Controls.Add(gradientPanelSoTienThuong);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmCasinoSlot";

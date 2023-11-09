@@ -216,14 +216,8 @@ namespace CasinoSlotMachine
             {
                 pctb2.Top += speed;
             }
-            if (panel1.Height == 596)
-            {
-                if (col1[randNum1].Location.Y == 123) // thử bấm máy tính đi 
-                {
-                    scrollTime1++;
-                }
-            }
-            else if (panel1.Height == 477 || panel1.Height == 716)
+
+            if (panel1.Height == 477 || panel1.Height == 716 || panel1.Height == 597)
             {
                 if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -276,14 +270,7 @@ namespace CasinoSlotMachine
             {
                 pctb5.Top += speed;
             }
-            if (panel2.Height == 596)
-            {
-                if (col2[randNum2].Location.Y == 123) // thử bấm máy tính đi 
-                {
-                    scrollTime2++;
-                }
-            }
-            else if (panel2.Height == 477 || panel2.Height == 716)
+            if (panel2.Height == 477 || panel2.Height == 716 || panel2.Height == 597)
             {
                 if (col2[randNum2].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -336,16 +323,9 @@ namespace CasinoSlotMachine
             {
                 pctb8.Top += speed;
             }
-            if (panel3.Height == 596)
+            if (panel3.Height == 477 || panel3.Height == 716 || panel3.Height == 597)
             {
-                if (col3[randNum1].Location.Y == 123) // thử bấm máy tính đi 
-                {
-                    scrollTime3++;
-                }
-            }
-            else if (panel3.Height == 477 || panel3.Height == 716)
-            {
-                if (col3[randNum1].Location.Y == 122) // thử bấm máy tính đi 
+                if (col3[randNum3].Location.Y == 122) // thử bấm máy tính đi 
                 {
                     scrollTime3++;
                 }

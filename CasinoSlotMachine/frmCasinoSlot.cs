@@ -216,10 +216,35 @@ namespace CasinoSlotMachine
             {
                 pctb2.Top += speed;
             }
-            if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
+            if (panel1.Height == 596)
             {
-                scrollTime1++;
+                if (col1[randNum1].Location.Y == 123) // thử bấm máy tính đi 
+                {
+                    scrollTime1++;
+                }
             }
+            else if (panel1.Height == 477 || panel1.Height == 716)
+            {
+                if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
+                {
+                    scrollTime1++;
+                }
+            }
+            else if (panel1.Height == 358)
+            {
+                if (col1[randNum1].Location.Y == 121) // thử bấm máy tính đi 
+                {
+                    scrollTime1++;
+                }
+            }
+            else if (panel1.Height == 763)
+            {
+                if (col1[randNum1].Location.Y == 129) // thử bấm máy tính đi 
+                {
+                    scrollTime1++;
+                }
+            }
+
             if (pctb3.Top > panel1.Height)
             {
 
@@ -251,9 +276,33 @@ namespace CasinoSlotMachine
             {
                 pctb5.Top += speed;
             }
-            if (col2[randNum2].Location.Y == 122)
+            if (panel2.Height == 596)
             {
-                scrollTime2++;
+                if (col2[randNum2].Location.Y == 123) // thử bấm máy tính đi 
+                {
+                    scrollTime2++;
+                }
+            }
+            else if (panel2.Height == 477 || panel2.Height == 716)
+            {
+                if (col2[randNum2].Location.Y == 122) // thử bấm máy tính đi 
+                {
+                    scrollTime2++;
+                }
+            }
+            else if (panel2.Height == 358)
+            {
+                if (col2[randNum2].Location.Y == 121) // thử bấm máy tính đi 
+                {
+                    scrollTime2++;
+                }
+            }
+            else if (panel2.Height == 763)
+            {
+                if (col2[randNum2].Location.Y == 129) // thử bấm máy tính đi 
+                {
+                    scrollTime2++;
+                }
             }
             if (pctb6.Top > panel2.Height)
             {
@@ -287,9 +336,33 @@ namespace CasinoSlotMachine
             {
                 pctb8.Top += speed;
             }
-            if (col3[randNum3].Location.Y == 122)
+            if (panel3.Height == 596)
             {
-                scrollTime3++;
+                if (col3[randNum1].Location.Y == 123) // thử bấm máy tính đi 
+                {
+                    scrollTime3++;
+                }
+            }
+            else if (panel3.Height == 477 || panel3.Height == 716)
+            {
+                if (col3[randNum1].Location.Y == 122) // thử bấm máy tính đi 
+                {
+                    scrollTime3++;
+                }
+            }
+            else if (panel3.Height == 358)
+            {
+                if (col3[randNum3].Location.Y == 121) // thử bấm máy tính đi 
+                {
+                    scrollTime3++;
+                }
+            }
+            else if (panel3.Height == 763)
+            {
+                if (col3[randNum3].Location.Y == 129) // thử bấm máy tính đi 
+                {
+                    scrollTime3++;
+                }
             }
             if (pctb9.Top > panel3.Height)
             {
@@ -350,8 +423,13 @@ namespace CasinoSlotMachine
                 timer1.Stop();
                 if (!timer1.Enabled && !timer2.Enabled && !timer3.Enabled)
                 {
-                    btnPlay.Enabled = true;
+                    if (btnAutoPlay.BackColor != Color.Yellow)
+                    {
+                        btnPlay.Enabled = true;
+                    }
                     btnGameMenu.Enabled = true;
+                    btnAutoPlay.Enabled = true;
+                    cboBet.Enabled = true;
                     if (isWin() == 1)
                     {
                         totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
@@ -380,8 +458,13 @@ namespace CasinoSlotMachine
                 timer2.Stop();
                 if (!timer1.Enabled && !timer2.Enabled && !timer3.Enabled)
                 {
-                    btnPlay.Enabled = true;
+                    if (btnAutoPlay.BackColor != Color.Yellow)
+                    {
+                        btnPlay.Enabled = true;
+                    }
                     btnGameMenu.Enabled = true;
+                    btnAutoPlay.Enabled = true;
+                    cboBet.Enabled = true;
                     if (isWin() == 1)
                     {
                         totalWin += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.1;
@@ -410,8 +493,12 @@ namespace CasinoSlotMachine
                 timer3.Stop();
                 if (!timer1.Enabled && !timer2.Enabled && !timer3.Enabled)
                 {
-                    btnPlay.Enabled = true;
+                    if (btnAutoPlay.BackColor != Color.Yellow)
+                    {
+                        btnPlay.Enabled = true;
+                    }
                     btnGameMenu.Enabled = true;
+                    btnAutoPlay.Enabled = true;
                     cboBet.Enabled = true;
                     if (isWin() == 1)
                     {
@@ -441,8 +528,7 @@ namespace CasinoSlotMachine
             if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 btnAutoPlay.BackColor = Color.Yellow;
-                btnPlay.Enabled = false;
-                cboBet.Enabled = true;
+                
                 while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
                 {
                     if (isCancel)

@@ -41,9 +41,9 @@
             glTitle.BackgroundColorTop = Color.Empty;
             glTitle.BackgroundGradientAngel = 0F;
             glTitle.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point);
-            glTitle.Location = new Point(0, 22);
+            glTitle.Location = new Point(0, 29);
             glTitle.Name = "glTitle";
-            glTitle.Size = new Size(531, 44);
+            glTitle.Size = new Size(607, 59);
             glTitle.TabIndex = 0;
             glTitle.Text = "Casino Slot Machine";
             glTitle.TextColorBottom = Color.Yellow;
@@ -58,9 +58,9 @@
             glPlay.BackgroundGradientAngel = 0F;
             glPlay.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glPlay.ForeColor = Color.Coral;
-            glPlay.Location = new Point(192, 76);
+            glPlay.Location = new Point(219, 101);
             glPlay.Name = "glPlay";
-            glPlay.Size = new Size(169, 40);
+            glPlay.Size = new Size(214, 50);
             glPlay.TabIndex = 1;
             glPlay.Text = "PLAY NOW";
             glPlay.TextColorBottom = Color.Yellow;
@@ -76,9 +76,9 @@
             glHelp.BackgroundGradientAngel = 0F;
             glHelp.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glHelp.ForeColor = Color.Coral;
-            glHelp.Location = new Point(192, 139);
+            glHelp.Location = new Point(219, 185);
             glHelp.Name = "glHelp";
-            glHelp.Size = new Size(87, 40);
+            glHelp.Size = new Size(112, 50);
             glHelp.TabIndex = 2;
             glHelp.Text = "HELP";
             glHelp.TextColorBottom = Color.Yellow;
@@ -94,9 +94,9 @@
             glCredit.BackgroundGradientAngel = 0F;
             glCredit.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glCredit.ForeColor = Color.Coral;
-            glCredit.Location = new Point(192, 204);
+            glCredit.Location = new Point(219, 272);
             glCredit.Name = "glCredit";
-            glCredit.Size = new Size(116, 40);
+            glCredit.Size = new Size(150, 50);
             glCredit.TabIndex = 3;
             glCredit.Text = "CREDIT";
             glCredit.TextColorBottom = Color.Yellow;
@@ -112,9 +112,9 @@
             glQuit.BackgroundGradientAngel = 0F;
             glQuit.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glQuit.ForeColor = Color.Coral;
-            glQuit.Location = new Point(192, 270);
+            glQuit.Location = new Point(219, 360);
             glQuit.Name = "glQuit";
-            glQuit.Size = new Size(86, 40);
+            glQuit.Size = new Size(111, 50);
             glQuit.TabIndex = 4;
             glQuit.Text = "QUIT";
             glQuit.TextColorBottom = Color.Yellow;
@@ -124,15 +124,16 @@
             // 
             // frmMenuScreen
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(531, 335);
+            ClientSize = new Size(607, 447);
             Controls.Add(glQuit);
             Controls.Add(glCredit);
             Controls.Add(glHelp);
             Controls.Add(glPlay);
             Controls.Add(glTitle);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmMenuScreen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmMenuScreen";

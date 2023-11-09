@@ -142,7 +142,7 @@
             btnGameMenu.Location = new Point(70, 650);
             btnGameMenu.Margin = new Padding(3, 4, 3, 4);
             btnGameMenu.Name = "btnGameMenu";
-            btnGameMenu.Size = new Size(104, 39);
+            btnGameMenu.Size = new Size(113, 39);
             btnGameMenu.TabIndex = 5;
             btnGameMenu.Text = "GAMES MENU";
             btnGameMenu.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             btnGameRules.Location = new Point(70, 697);
             btnGameRules.Margin = new Padding(3, 4, 3, 4);
             btnGameRules.Name = "btnGameRules";
-            btnGameRules.Size = new Size(104, 39);
+            btnGameRules.Size = new Size(113, 39);
             btnGameRules.TabIndex = 6;
             btnGameRules.Text = "GAME RULES";
             btnGameRules.UseVisualStyleBackColor = true;
@@ -166,9 +166,9 @@
             gradientLabel1.BackgroundColorTop = Color.Blue;
             gradientLabel1.BackgroundGradientAngel = 0F;
             gradientLabel1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel1.Location = new Point(180, 683);
+            gradientLabel1.Location = new Point(189, 680);
             gradientLabel1.Name = "gradientLabel1";
-            gradientLabel1.Size = new Size(116, 40);
+            gradientLabel1.Size = new Size(150, 50);
             gradientLabel1.TabIndex = 7;
             gradientLabel1.Text = "CREDIT";
             gradientLabel1.TextColorBottom = Color.Yellow;
@@ -182,9 +182,9 @@
             glCredit.BackgroundColorTop = Color.Empty;
             glCredit.BackgroundGradientAngel = 0F;
             glCredit.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glCredit.Location = new Point(319, 683);
+            glCredit.Location = new Point(368, 682);
             glCredit.Name = "glCredit";
-            glCredit.Size = new Size(186, 40);
+            glCredit.Size = new Size(231, 50);
             glCredit.TabIndex = 8;
             glCredit.Text = "000.000.000";
             glCredit.TextColorBottom = Color.White;
@@ -198,9 +198,9 @@
             gradientLabel3.BackgroundColorTop = Color.Blue;
             gradientLabel3.BackgroundGradientAngel = 0F;
             gradientLabel3.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            gradientLabel3.Location = new Point(573, 683);
+            gradientLabel3.Location = new Point(623, 682);
             gradientLabel3.Name = "gradientLabel3";
-            gradientLabel3.Size = new Size(68, 40);
+            gradientLabel3.Size = new Size(88, 50);
             gradientLabel3.TabIndex = 9;
             gradientLabel3.Text = "BET";
             gradientLabel3.TextColorBottom = Color.Yellow;
@@ -370,9 +370,9 @@
             cboBet.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             cboBet.ForeColor = Color.White;
             cboBet.FormattingEnabled = true;
-            cboBet.Location = new Point(670, 680);
+            cboBet.Location = new Point(729, 680);
             cboBet.Name = "cboBet";
-            cboBet.Size = new Size(171, 48);
+            cboBet.Size = new Size(171, 56);
             cboBet.TabIndex = 17;
             // 
             // btnAutoPlay
@@ -389,7 +389,8 @@
             // 
             // frmCasinoSlot
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(914, 741);
             Controls.Add(btnAutoPlay);

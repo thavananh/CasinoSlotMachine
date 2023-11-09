@@ -61,7 +61,7 @@
             glMinhTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glMinhTam.Location = new Point(387, 99);
             glMinhTam.Name = "glMinhTam";
-            glMinhTam.Size = new Size(433, 40);
+            glMinhTam.Size = new Size(541, 50);
             glMinhTam.TabIndex = 7;
             glMinhTam.Text = "Lầu Minh Tâm - 48.01.104.118";
             glMinhTam.TextColorBottom = Color.Yellow;
@@ -130,7 +130,8 @@
             // 
             // frmCredit
             // 
-            AutoScaleMode = AutoScaleMode.None;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
             ClientSize = new Size(832, 437);
             Controls.Add(btnGameMenu);

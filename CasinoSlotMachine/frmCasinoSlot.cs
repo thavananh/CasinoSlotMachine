@@ -370,6 +370,8 @@ namespace CasinoSlotMachine
             return 0;
         }
 
+        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>(); // dùng để đợi game chạy hết 1 round rồi mới chạy tiếp
+
         private void btnPlay_Click(object sender, EventArgs e)
         {
             // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
@@ -396,7 +398,7 @@ namespace CasinoSlotMachine
             }
         }
 
-        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
+        
 
         // đã set thuộc tính timer có interval là 1ms nghĩa là cứ 1 mili giây thì hàm timer_tick này sẽ được gọi 1 lần
         private void timer1_Tick(object sender, EventArgs e)
@@ -523,8 +525,8 @@ namespace CasinoSlotMachine
                     }
                     btnPlay_Click(sender, e);
                     btnAutoPlay.Enabled = true;
-                    await tcs.Task; // trường hợp xấu nhất game có thể chạy
-                    await Task.Delay(1000);
+                    await tcs.Task;
+                    await Task.Delay(1000); // làm chậm lại animation, để ảnh scroll hết
                 }
             }
             else

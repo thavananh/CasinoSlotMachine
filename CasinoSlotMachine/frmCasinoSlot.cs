@@ -528,7 +528,7 @@ namespace CasinoSlotMachine
             if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 btnAutoPlay.BackColor = Color.Yellow;
-                
+
                 while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
                 {
                     if (isCancel)
@@ -549,7 +549,7 @@ namespace CasinoSlotMachine
             }
         }
 
-        
+
 
         private void btnGameMenu_Click(object sender, EventArgs e)
         {

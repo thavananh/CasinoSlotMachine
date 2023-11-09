@@ -38,13 +38,17 @@
             // 
             // glDuy
             // 
+            glDuy.Aligntment = StringAlignment.Center;
+            glDuy.Anchor = AnchorStyles.Left;
+            glDuy.AutoSize = true;
             glDuy.BackgroundColorBottom = Color.Empty;
             glDuy.BackgroundColorTop = Color.Empty;
             glDuy.BackgroundGradientAngel = 0F;
             glDuy.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glDuy.Location = new Point(24, 9);
+            glDuy.LineAlignment = StringAlignment.Center;
+            glDuy.Location = new Point(1, 9);
             glDuy.Name = "glDuy";
-            glDuy.Size = new Size(537, 53);
+            glDuy.Size = new Size(533, 40);
             glDuy.TabIndex = 6;
             glDuy.Text = "Nguyễn Võ Minh Duy - 48.01.104.035";
             glDuy.TextColorBottom = Color.Yellow;
@@ -54,14 +58,16 @@
             // 
             // glMinhTam
             // 
+            glMinhTam.Aligntment = StringAlignment.Center;
             glMinhTam.AutoSize = true;
             glMinhTam.BackgroundColorBottom = Color.Empty;
             glMinhTam.BackgroundColorTop = Color.Empty;
             glMinhTam.BackgroundGradientAngel = 0F;
             glMinhTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glMinhTam.Location = new Point(387, 99);
+            glMinhTam.LineAlignment = StringAlignment.Center;
+            glMinhTam.Location = new Point(283, 75);
             glMinhTam.Name = "glMinhTam";
-            glMinhTam.Size = new Size(541, 50);
+            glMinhTam.Size = new Size(433, 40);
             glMinhTam.TabIndex = 7;
             glMinhTam.Text = "Lầu Minh Tâm - 48.01.104.118";
             glMinhTam.TextColorBottom = Color.Yellow;
@@ -71,13 +77,18 @@
             // 
             // glDaiTam
             // 
+            glDaiTam.Aligntment = StringAlignment.Center;
+            glDaiTam.Anchor = AnchorStyles.Left;
+            glDaiTam.AutoSize = true;
             glDaiTam.BackgroundColorBottom = Color.Empty;
             glDaiTam.BackgroundColorTop = Color.Empty;
             glDaiTam.BackgroundGradientAngel = 0F;
             glDaiTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glDaiTam.Location = new Point(318, 256);
+            glDaiTam.LineAlignment = StringAlignment.Center;
+            glDaiTam.Location = new Point(221, 190);
             glDaiTam.Name = "glDaiTam";
-            glDaiTam.Size = new Size(502, 40);
+            glDaiTam.RightToLeft = RightToLeft.No;
+            glDaiTam.Size = new Size(495, 40);
             glDaiTam.TabIndex = 11;
             glDaiTam.Text = "Liên Quốc Đại Tâm - 48.01.104.119";
             glDaiTam.TextColorBottom = Color.Yellow;
@@ -87,13 +98,16 @@
             // 
             // glThich
             // 
+            glThich.Aligntment = StringAlignment.Center;
+            glThich.AutoSize = true;
             glThich.BackgroundColorBottom = Color.Empty;
             glThich.BackgroundColorTop = Color.Empty;
             glThich.BackgroundGradientAngel = 0F;
             glThich.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glThich.Location = new Point(24, 173);
+            glThich.LineAlignment = StringAlignment.Center;
+            glThich.Location = new Point(1, 132);
             glThich.Name = "glThich";
-            glThich.Size = new Size(468, 53);
+            glThich.Size = new Size(464, 40);
             glThich.TabIndex = 10;
             glThich.Text = "Văn Thành Thích - 48.01.104.127";
             glThich.TextColorBottom = Color.Yellow;
@@ -103,13 +117,16 @@
             // 
             // glNguyen
             // 
+            glNguyen.Aligntment = StringAlignment.Center;
+            glNguyen.AutoSize = true;
             glNguyen.BackgroundColorBottom = Color.Empty;
             glNguyen.BackgroundColorTop = Color.Empty;
             glNguyen.BackgroundGradientAngel = 0F;
             glNguyen.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            glNguyen.Location = new Point(24, 322);
+            glNguyen.LineAlignment = StringAlignment.Center;
+            glNguyen.Location = new Point(1, 244);
             glNguyen.Name = "glNguyen";
-            glNguyen.Size = new Size(549, 53);
+            glNguyen.Size = new Size(540, 40);
             glNguyen.TabIndex = 12;
             glNguyen.Text = "Nguyễn Phúc Nguyên - 48.01.104.098";
             glNguyen.TextColorBottom = Color.Yellow;
@@ -119,10 +136,9 @@
             // 
             // btnGameMenu
             // 
-            btnGameMenu.Location = new Point(683, 385);
-            btnGameMenu.Margin = new Padding(3, 4, 3, 4);
+            btnGameMenu.Location = new Point(598, 289);
             btnGameMenu.Name = "btnGameMenu";
-            btnGameMenu.Size = new Size(104, 39);
+            btnGameMenu.Size = new Size(91, 29);
             btnGameMenu.TabIndex = 13;
             btnGameMenu.Text = "GAMES MENU";
             btnGameMenu.UseVisualStyleBackColor = true;
@@ -130,16 +146,17 @@
             // 
             // frmCredit
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(832, 437);
+            ClientSize = new Size(728, 328);
             Controls.Add(btnGameMenu);
             Controls.Add(glNguyen);
             Controls.Add(glDaiTam);
             Controls.Add(glThich);
             Controls.Add(glMinhTam);
             Controls.Add(glDuy);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmCredit";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmCredit";

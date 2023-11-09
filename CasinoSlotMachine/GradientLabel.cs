@@ -15,6 +15,8 @@ namespace CasinoSlotMachine
         private Color textColorBottom = Color.Black;
         private float backgroundGradientAngel;
         private float textGradientAngel;
+        private StringAlignment aligntment = StringAlignment.Center;
+        private StringAlignment lineAlignment = StringAlignment.Center;
 
         public Color BackgroundColorTop { get => backgroundColorTop; set => backgroundColorTop = value; }
         public Color BackgroundColorBottom { get => backgroundColorBottom; set => backgroundColorBottom = value; }
@@ -22,8 +24,8 @@ namespace CasinoSlotMachine
         public Color TextColorBottom { get => textColorBottom; set => textColorBottom = value; }
         public float BackgroundGradientAngel { get => backgroundGradientAngel; set => backgroundGradientAngel = value; }
         public float TextGradientAngel { get => textGradientAngel; set => textGradientAngel = value; }
-
-        
+        public StringAlignment Aligntment { get => aligntment; set => aligntment = value; }
+        public StringAlignment LineAlignment { get => lineAlignment; set => lineAlignment = value; }
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -31,19 +33,16 @@ namespace CasinoSlotMachine
             Graphics graphic = e.Graphics;
             graphic.FillRectangle(backgroundGradientBrush, this.ClientRectangle);
 
-            Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
+            Rectangle rect = new Rectangle(0 - 5, 0, this.Width + 10, this.Height);
             LinearGradientBrush textGradientBrush = new LinearGradientBrush(this.ClientRectangle, this.TextColorTop, this.TextColorBottom, this.TextGradientAngel);
             StringFormat stringFormat = new StringFormat()
             {
-                LineAlignment = StringAlignment.Center,
-                Alignment = StringAlignment.Center,
+                LineAlignment = Aligntment,
+                Alignment = LineAlignment,
                 FormatFlags = StringFormatFlags.NoWrap,
-                Trimming = StringTrimming.EllipsisCharacter
+                //Trimming = StringTrimming.EllipsisCharacter
             };
-
             e.Graphics.DrawString(this.Text, this.Font, textGradientBrush, rect, stringFormat);
-
-            
         }
     }
 }

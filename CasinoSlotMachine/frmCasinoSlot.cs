@@ -217,14 +217,14 @@ namespace CasinoSlotMachine
                 pctb2.Top += speed;
             }
 
-            if (panel1.Height == 477 || panel1.Height == 716 || panel1.Height == 597)
+            if (panel1.Height == 477 || panel1.Height == 716 || panel1.Height == 596)
             {
                 if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
                 {
                     scrollTime1++;
                 }
             }
-            else if (panel1.Height == 358)
+            else if (panel1.Height == 358) // 100%
             {
                 if (col1[randNum1].Location.Y == 121) // thử bấm máy tính đi 
                 {
@@ -270,7 +270,7 @@ namespace CasinoSlotMachine
             {
                 pctb5.Top += speed;
             }
-            if (panel2.Height == 477 || panel2.Height == 716 || panel2.Height == 597)
+            if (panel2.Height == 477 || panel2.Height == 716 || panel2.Height == 596)
             {
                 if (col2[randNum2].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -323,7 +323,7 @@ namespace CasinoSlotMachine
             {
                 pctb8.Top += speed;
             }
-            if (panel3.Height == 477 || panel3.Height == 716 || panel3.Height == 597)
+            if (panel3.Height == 477 || panel3.Height == 716 || panel3.Height == 596)
             {
                 if (col3[randNum3].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -375,6 +375,7 @@ namespace CasinoSlotMachine
             // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
             if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
+                tcs = new TaskCompletionSource<bool>();
                 credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
                 glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                 btnPlay.Enabled = false; // không cho người dùng bấm play game khi đã CHẠY RỒI
@@ -394,6 +395,8 @@ namespace CasinoSlotMachine
                 MessageBox.Show("Dừng lại là thất bại, nạp tiền chơi tiếp đi !!!");
             }
         }
+
+        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
 
         // đã set thuộc tính timer có interval là 1ms nghĩa là cứ 1 mili giây thì hàm timer_tick này sẽ được gọi 1 lần
         private void timer1_Tick(object sender, EventArgs e)
@@ -424,6 +427,7 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
@@ -459,6 +463,7 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
@@ -494,6 +499,7 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
@@ -508,16 +514,17 @@ namespace CasinoSlotMachine
             if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 btnAutoPlay.BackColor = Color.Yellow;
-
                 while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
                 {
+                    
                     if (isCancel)
                     {
                         break;
                     }
                     btnPlay_Click(sender, e);
                     btnAutoPlay.Enabled = true;
-                    await Task.Delay(9000); // trường hợp xấu nhất game có thể chạy
+                    await tcs.Task; // trường hợp xấu nhất game có thể chạy
+                    await Task.Delay(1000);
                 }
             }
             else

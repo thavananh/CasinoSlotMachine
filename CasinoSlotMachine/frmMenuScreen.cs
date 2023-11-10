@@ -30,6 +30,7 @@ namespace CasinoSlotMachine
                 {
                     isExiting = true;
                     Application.Exit(); // khi gọi hàm này nó gọi cả Event FormClosing lần nữa
+                   
                 }
                 else
                 {
@@ -42,7 +43,7 @@ namespace CasinoSlotMachine
         private void glPlay_Click(object sender, EventArgs e)
         {
 
-            FormClosing -= frmMenuScreen_FormClosing;
+            FormClosing -= frmMenuScreen_FormClosing; // bỏ gán sự kiện FormClosing
             this.Close();
             frmCasinoSlot casinoSlot = new frmCasinoSlot();
             casinoSlot.Show();

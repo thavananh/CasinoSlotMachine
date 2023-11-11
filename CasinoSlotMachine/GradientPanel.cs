@@ -11,14 +11,14 @@ namespace CasinoSlotMachine
     {
         private Color colorTop;
         private Color colorBottom;
-        private float gradientAngle;
+        private float gradientAngle = 90f;
         public Color ColorTop { get => colorTop; set => colorTop = value; }
         public Color ColorBottom { get => colorBottom; set => colorBottom = value; }
         public float GradientAngle { get => gradientAngle; set => gradientAngle = value; }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(this.ClientRectangle, this.ColorTop, this.ColorBottom, 90);
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(this.ClientRectangle, this.ColorTop, this.ColorBottom, this.GradientAngle);
             Graphics graphic = e.Graphics;
             graphic.FillRectangle(linearGradientBrush, this.ClientRectangle);
             base.OnPaint(e);

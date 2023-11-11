@@ -80,8 +80,6 @@ namespace CasinoSlotMachine
                 }
             }
         }
-
-
         // là tiền thưởng khi chưa chơi
         decimal totalWin = 0;
 
@@ -102,15 +100,13 @@ namespace CasinoSlotMachine
             // set mức cược mặc định là 10 đô 
             cboBet.SelectedIndex = 0;
             // gán cho tiền thưởng là 0
-            glSoTienThuong.Text = 0.ToString("C", new CultureInfo("en-us"));
+            glSoTienThuong.Text = totalWin.ToString("C", new CultureInfo("en-us"));
         }
-
         private void frmCasinoSlot_Load(object sender, EventArgs e)
         {
             loadTien();
             player.PlayLooping();
         }
-
         void loadHinhAnh()
         {
             // khởi tạo 7 img với id từ 1 đến 7, ảnh có thêm xem trong phần resources
@@ -121,7 +117,6 @@ namespace CasinoSlotMachine
             ImageTaoLao img5 = new ImageTaoLao(5, Properties.Resources._5);
             ImageTaoLao img6 = new ImageTaoLao(6, Properties.Resources._6);
             ImageTaoLao img7 = new ImageTaoLao(7, Properties.Resources._7);
-
             // dùng để random
             assetList = new Dictionary<int, ImageTaoLao>()
             {
@@ -140,9 +135,8 @@ namespace CasinoSlotMachine
                 {13, img6},
                 {14, img7},
             };
-
             // random hình ảnh và gán tag cho các picture box
-            int randTaoLao = rand.Next(1, 15);
+            int randTaoLao = rand.Next(1, 15); //random số từ số 1 đến số 14
             pctb1.BackgroundImage = assetList[randTaoLao].Asset;
             pctb1.Tag = assetList[randTaoLao].IdImage;
             randTaoLao = rand.Next(1, 15);
@@ -176,7 +170,6 @@ namespace CasinoSlotMachine
                 pctb1,
                 pctb2,
                 pctb3
-
             };
             col2 = new List<PictureBox>()
             {
@@ -191,9 +184,6 @@ namespace CasinoSlotMachine
                 pctb9
             };
         }
-
-
-
         // dùng để di chuyển các hình ảnh
         void movePictureBox(int speed)
         {
@@ -217,14 +207,14 @@ namespace CasinoSlotMachine
                 pctb2.Top += speed;
             }
 
-            if (panel1.Height == 477 || panel1.Height == 716 || panel1.Height == 597)
+            if (panel1.Height == 477 || panel1.Height == 716 || panel1.Height == 596)
             {
                 if (col1[randNum1].Location.Y == 122) // thử bấm máy tính đi 
                 {
                     scrollTime1++;
                 }
             }
-            else if (panel1.Height == 358)
+            else if (panel1.Height == 358) // 100%
             {
                 if (col1[randNum1].Location.Y == 121) // thử bấm máy tính đi 
                 {
@@ -249,7 +239,6 @@ namespace CasinoSlotMachine
                 pctb3.Top += speed;
             }
         }
-
         void movePictureBox1(int speed)
         {
             randNum2 = rand.Next(0, 3);
@@ -270,7 +259,7 @@ namespace CasinoSlotMachine
             {
                 pctb5.Top += speed;
             }
-            if (panel2.Height == 477 || panel2.Height == 716 || panel2.Height == 597)
+            if (panel2.Height == 477 || panel2.Height == 716 || panel2.Height == 596)
             {
                 if (col2[randNum2].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -302,7 +291,6 @@ namespace CasinoSlotMachine
             }
 
         }
-
         void movePictureBox2(int speed)
         {
             randNum3 = rand.Next(0, 3);
@@ -323,7 +311,7 @@ namespace CasinoSlotMachine
             {
                 pctb8.Top += speed;
             }
-            if (panel3.Height == 477 || panel3.Height == 716 || panel3.Height == 597)
+            if (panel3.Height == 477 || panel3.Height == 716 || panel3.Height == 596)
             {
                 if (col3[randNum3].Location.Y == 122) // thử bấm máy tính đi 
                 {
@@ -355,7 +343,6 @@ namespace CasinoSlotMachine
             }
 
         }
-
         // điều kiện win là 1 hàng có 2 cột liên tiếp cùng chạy
         int isWin()
         {
@@ -369,12 +356,13 @@ namespace CasinoSlotMachine
             }
             return 0;
         }
-
+        TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>(); // dùng để đợi game chạy hết 1 round rồi mới chạy tiếp
         private void btnPlay_Click(object sender, EventArgs e)
         {
             // kiểm tra tiền player có lớn hơn hoặc bằng tiền cược không
             if (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
+                tcs = new TaskCompletionSource<bool>();
                 credit -= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us"));
                 glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                 btnPlay.Enabled = false; // không cho người dùng bấm play game khi đã CHẠY RỒI
@@ -394,7 +382,6 @@ namespace CasinoSlotMachine
                 MessageBox.Show("Dừng lại là thất bại, nạp tiền chơi tiếp đi !!!");
             }
         }
-
         // đã set thuộc tính timer có interval là 1ms nghĩa là cứ 1 mili giây thì hàm timer_tick này sẽ được gọi 1 lần
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -424,13 +411,13 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
             movePictureBox(15);
 
         }
-
         private void timer2_Tick(object sender, EventArgs e)
         {
             if (scrollTime2 >= 3)
@@ -459,6 +446,7 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
@@ -494,6 +482,7 @@ namespace CasinoSlotMachine
                         credit += Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")) * (decimal)1.25;
                         glCredit.Text = credit.ToString("C", new CultureInfo("en-us"));
                     }
+                    tcs.SetResult(true);
                 }
                 return;
             }
@@ -508,7 +497,7 @@ namespace CasinoSlotMachine
             if (btnAutoPlay.BackColor == SystemColors.Control && Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
             {
                 btnAutoPlay.BackColor = Color.Yellow;
-
+                isCancel = false;
                 while (Decimal.Parse(glCredit.Text, NumberStyles.Currency, new CultureInfo("en-us")) >= Decimal.Parse(cboBet.SelectedItem.ToString(), NumberStyles.Currency, new CultureInfo("en-us")))
                 {
                     if (isCancel)
@@ -517,7 +506,8 @@ namespace CasinoSlotMachine
                     }
                     btnPlay_Click(sender, e);
                     btnAutoPlay.Enabled = true;
-                    await Task.Delay(9000); // trường hợp xấu nhất game có thể chạy
+                    await tcs.Task;
+                    await Task.Delay(1000); // làm chậm lại animation, để ảnh scroll hết
                 }
             }
             else
@@ -539,8 +529,6 @@ namespace CasinoSlotMachine
             this.Close();
             menu.Show();
         }
-
-
         // PlayLoop do mình gán tag mặc định
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
@@ -557,7 +545,6 @@ namespace CasinoSlotMachine
                 player.PlayLooping();
             }
         }
-
         // Luật chơi
         private void btnGameRules_Click(object sender, EventArgs e)
         {

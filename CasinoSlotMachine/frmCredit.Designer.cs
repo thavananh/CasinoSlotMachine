@@ -85,7 +85,7 @@
             glDaiTam.BackgroundGradientAngel = 0F;
             glDaiTam.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             glDaiTam.LineAlignment = StringAlignment.Center;
-            glDaiTam.Location = new Point(253, 253);
+            glDaiTam.Location = new Point(239, 256);
             glDaiTam.Name = "glDaiTam";
             glDaiTam.RightToLeft = RightToLeft.No;
             glDaiTam.Size = new Size(621, 50);
@@ -136,7 +136,7 @@
             // 
             // btnGameMenu
             // 
-            btnGameMenu.Location = new Point(662, 385);
+            btnGameMenu.Location = new Point(713, 385);
             btnGameMenu.Margin = new Padding(3, 4, 3, 4);
             btnGameMenu.Name = "btnGameMenu";
             btnGameMenu.Size = new Size(125, 39);
@@ -150,7 +150,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(67, 1, 1);
-            ClientSize = new Size(832, 437);
+            ClientSize = new Size(872, 437);
             Controls.Add(btnGameMenu);
             Controls.Add(glNguyen);
             Controls.Add(glDaiTam);

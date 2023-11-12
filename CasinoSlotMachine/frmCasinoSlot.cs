@@ -21,7 +21,6 @@ namespace CasinoSlotMachine
         {
             InitializeComponent();
         }
-
         // khởi tạo list (mảng 1 chiều) tương ứng với cột 1, cột 2, cột 3
         List<PictureBox> col1;
         List<PictureBox> col2;
@@ -50,20 +49,13 @@ namespace CasinoSlotMachine
         static int scrollTime1 = 0;
         static int scrollTime2 = 0;
         static int scrollTime3 = 0;
-
-
         // khởi tạo biến rand
         static Random rand = new Random();
-
         // khởi tạo biến chứa các giá trị random tương ứng cho ba cột
         static int randNum1, randNum2, randNum3;
-
         // dùng để tránh bị gọi messagebox hai lần
         bool isExiting = false;
-
-        // khởi tạo SoundPlayer để phát nhạc, thư viện mặc định của c# chỉ có thể phát nhạc có đuổi là .wav
-        SoundPlayer player = new SoundPlayer(Properties.Resources.theme);
-
+        
         private void frmCasinoSlot_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isExiting)
@@ -82,10 +74,8 @@ namespace CasinoSlotMachine
         }
         // là tiền thưởng khi chưa chơi
         decimal totalWin = 0;
-
         // mặc đinh player có 1000 đô
         decimal credit = 1000;
-
         void loadTien()
         {
             // gán cho Text cho label với string có định dạng currency theo kiểu mỹ en-US
@@ -163,7 +153,6 @@ namespace CasinoSlotMachine
             randTaoLao = rand.Next(1, 15);
             pctb9.BackgroundImage = assetList[randTaoLao].Asset;
             pctb9.Tag = assetList[randTaoLao].IdImage;
-
             // khởi tạo list tương ứng với 3 picture box
             col1 = new List<PictureBox>()
             {
@@ -289,7 +278,6 @@ namespace CasinoSlotMachine
             {
                 pctb6.Top += speed;
             }
-
         }
         void movePictureBox2(int speed)
         {
@@ -341,7 +329,6 @@ namespace CasinoSlotMachine
             {
                 pctb9.Top += speed;
             }
-
         }
         // điều kiện win là 1 hàng có 2 cột liên tiếp cùng chạy
         int isWin()
@@ -416,7 +403,6 @@ namespace CasinoSlotMachine
                 return;
             }
             movePictureBox(15);
-
         }
         private void timer2_Tick(object sender, EventArgs e)
         {
@@ -453,7 +439,6 @@ namespace CasinoSlotMachine
             movePictureBox1(15);
 
         }
-
         private void timer3_Tick(object sender, EventArgs e)
         {
             if (scrollTime3 >= 3)
@@ -488,9 +473,7 @@ namespace CasinoSlotMachine
             }
             movePictureBox2(15);
         }
-
         bool isCancel = false;
-
         // AutoPlay
         private async void btnAutoPlay_Click(object sender, EventArgs e)
         {
@@ -518,9 +501,6 @@ namespace CasinoSlotMachine
                 isCancel = true;
             }
         }
-
-
-
         private void btnGameMenu_Click(object sender, EventArgs e)
         {
             frmMenuScreen menu = new frmMenuScreen();
@@ -530,6 +510,8 @@ namespace CasinoSlotMachine
             menu.Show();
         }
         // PlayLoop do mình gán tag mặc định
+        // khởi tạo SoundPlayer để phát nhạc, thư viện mặc định của c# chỉ có thể phát nhạc có đuổi là .wav
+        SoundPlayer player = new SoundPlayer(Properties.Resources.theme);
         private void btnSpeaker_Click(object sender, EventArgs e)
         {
             if (btnSpeaker.Tag.ToString() == "PlayLoop")

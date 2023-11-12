@@ -38,48 +38,84 @@ namespace CasinoSlotMachine
                 }
             }
         }
-
         private void glDuy_Click(object sender, EventArgs e)
         {
-            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/profile.php?id=100015450043466";
-            process.Arguments = urlFacebook;
-            System.Diagnostics.Process.Start(process);
+            try
+            {
+                var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                string urlFacebook = "https://www.facebook.com/profile.php?id=100015450043466";
+                process.Arguments = urlFacebook;
+                System.Diagnostics.Process.Start(process);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không tìm thấy Chrome của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
 
         private void glMinhTam_Click(object sender, EventArgs e)
         {
             // tìm trình duyệt chrome
-            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/minhtam.lau";
-            process.Arguments = urlFacebook; // chỉ đường dẫn web vào chrome
-            System.Diagnostics.Process.Start(process); // chạy toàn bộ process trên
+            try
+            {
+                var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                string urlFacebook = "https://www.facebook.com/minhtam.lau";
+                process.Arguments = urlFacebook; // chỉ đường dẫn web vào chrome
+                System.Diagnostics.Process.Start(process); // chạy toàn bộ process trên
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không tìm thấy chrome của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
-
         private void glThich_Click(object sender, EventArgs e)
         {
-            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/cucshitmauhong";
-            process.Arguments = urlFacebook;
-            System.Diagnostics.Process.Start(process);
+            try
+            {
+                var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                string urlFacebook = "https://www.facebook.com/cucshitmauhong";
+                process.Arguments = urlFacebook;
+                System.Diagnostics.Process.Start(process);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không tìm thấy chrome của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
 
         private void glDaiTam_Click(object sender, EventArgs e)
         {
-            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = "https://www.facebook.com/lqdai.tom.2003/";
-            process.Arguments = urlFacebook;
-            System.Diagnostics.Process.Start(process);
+            try
+            {
+                var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                string urlFacebook = "https://www.facebook.com/lqdai.tom.2003/";
+                process.Arguments = urlFacebook;
+                System.Diagnostics.Process.Start(process);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không tìm thấy chrome của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
-
         private void glNguyen_Click(object sender, EventArgs e)
         {
-            var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-            string urlFacebook = @"https://www.facebook.com/cubonll";
-            process.Arguments = urlFacebook;
-            System.Diagnostics.Process.Start(process);
+            try
+            {
+                var process = new ProcessStartInfo("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+                string urlFacebook = @"https://www.facebook.com/cubonll";
+                process.Arguments = urlFacebook;
+                System.Diagnostics.Process.Start(process);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không tìm thấy chrome của bạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
         }
-
         private void btnGameMenu_Click(object sender, EventArgs e)
         {
             frmMenuScreen menu = new frmMenuScreen(); // tạo một instance của frmMenuScreen
